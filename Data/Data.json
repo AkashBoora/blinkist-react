@@ -12,8 +12,8 @@
       "year": 1315,
       "readTime": "15",
       "readersCount": "1.9k",
-      "status": "myLibrary",
-      "category": "featured",
+      "status": "finished",
+      "category": "entrepreneurship",
       "tags": []
     },
     {
@@ -28,8 +28,8 @@
       "year": 1952,
       "readTime": "13",
       "readersCount": "",
-      "status": "myLibrary",
-      "category": "trendingBlinks",
+      "status": "reading",
+      "category": "entrepreneurship",
       "tags": []
     },
     {
@@ -44,8 +44,8 @@
       "year": 1836,
       "readTime": "15",
       "readersCount": "",
-      "status": "myLibrary",
-      "category": "trendingBlinks",
+      "status": "finished",
+      "category": "entrepreneurship",
       "tags": []
     },
     {
@@ -60,8 +60,8 @@
       "year": 1351,
       "readTime": "12",
       "readersCount": "",
-      "status": "myLibrary",
-      "category": "justAdd",
+      "status": "finished",
+      "category": "entrepreneurship",
       "tags": []
     },
     {
@@ -76,8 +76,8 @@
       "year": 1813,
       "readTime": "15",
       "readersCount": "",
-      "status": "finished",
-      "category": "justAdd",
+      "status": "reading",
+      "category": "politics",
       "tags": []
     },
     {
@@ -93,7 +93,7 @@
       "readTime": "13",
       "readersCount": "",
       "status": "reading",
-      "category": "trendingBlinks",
+      "category": "politics",
       "tags": []
     },
     {
@@ -108,8 +108,8 @@
       "year": 1970,
       "readTime": "15",
       "readersCount": "",
-      "status": "reading",
-      "category": "trendingBlinks",
+      "status": "finished",
+      "category": "politics",
       "tags": []
     },
     {
@@ -124,8 +124,8 @@
       "year": 1835,
       "readTime": "13",
       "readersCount": "1.9k",
-      "status": "reading",
-      "category": "justAdd",
+      "status": "finished",
+      "category": "politics",
       "tags": []
     },
     {
@@ -141,7 +141,7 @@
       "readTime": "13",
       "readersCount": "",
       "status": "reading",
-      "category": "trendingBlinks",
+      "category": "marketing & sales",
       "tags": []
     },
     {
@@ -156,8 +156,8 @@
       "year": 1970,
       "readTime": "12",
       "readersCount": "16k",
-      "status": "finished",
-      "category": "trendingBlinks",
+      "status": "reading",
+      "category": "marketing & sales",
       "tags": []
     },
     {
@@ -173,7 +173,7 @@
       "readTime": "13",
       "readersCount": "1.9k",
       "status": "reading",
-      "category": "featured",
+      "category": "marketing & sales",
       "tags": []
     }
   ]

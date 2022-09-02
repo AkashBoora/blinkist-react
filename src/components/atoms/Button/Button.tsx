@@ -84,13 +84,13 @@ const useStyles = makeStyles({
     padding: "12px 24px 12px 24px",
     "&:hover": {
       color: Theme.palette.text_color.main,
-      backgroundColor: "white"
     },
   },
 });
 
 export interface ButtonComponentProps extends ButtonProps {
   startIcon?: React.ReactNode | undefined;
+  onClick?: any;
 }
 
 export const ButtonComponent = (props: ButtonComponentProps) => {

@@ -24,7 +24,7 @@ const Template: Story< HomePageTabComponentProps> = (args) => (
 export const HomePageTabs = Template.bind({});
 HomePageTabs.args={
     books: getBooks(),
-    onClick: ()=>handleClick(getBooks()[0])
+    changeBookStatus: ()=>handleClick(getBooks()[0])
 }
 
 

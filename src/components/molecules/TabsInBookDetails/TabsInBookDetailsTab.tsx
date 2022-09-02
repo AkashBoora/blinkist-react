@@ -35,8 +35,8 @@ export const TabsBookDetailComponent = () => {
 
   
   return (
-    <Box sx={{ width: "80%", typography: "subtitle1" }}>
-      <TabContext value={value}>
+    <Box sx={{ justifyContent:"left !important", typography: "subtitle1" }}>
+      <TabContext value={value} >
         <Box
           fontFamily={"Cera Pro"}
           fontWeight={"Medium"}

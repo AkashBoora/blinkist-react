@@ -6,7 +6,7 @@ import { Book } from "../../molecules/BookCard/BookCard";
 import { BookDeatailsProps, BookDetailsComponenet } from "./BookDetails";
 
 export default {
-    title: "Molecules/BookDetailsComponent",
+    title: "Organisms/BookDetailsComponent",
     component: BookDetailsComponenet
   }
   
@@ -20,4 +20,9 @@ export default {
   export const BookDetails = Template.bind({});
   BookDetails.args = {
     book:getBooks()[0]
+  };
+
+  export const BookDetails2 = Template.bind({});
+  BookDetails2.args = {
+    book:getBooks()[1]
   };

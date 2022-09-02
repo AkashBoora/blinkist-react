@@ -27,7 +27,7 @@ ReadCard.args = {
   book:getBooks()[0],
    bookObject:getBooks(),
     typeOfCard:"reading",
-    onFinishedClick: ()=>handleClick(getBooks()[0])
+    changeBookStatus: ()=>handleClick(getBooks()[0])
 };
 
 export const FinishedCard = Template.bind({});
@@ -35,7 +35,7 @@ FinishedCard.args = {
   book: getBooks()[0],
   bookObject: getBooks(),
   typeOfCard: "finished",
-  onFinishedClick: () => handleClick(getBooks()[0]),
+  changeBookStatus: () => handleClick(getBooks()[0]),
 };
 
 export const AddToLibraryCard = Template.bind({});
@@ -43,7 +43,7 @@ AddToLibraryCard.args = {
   book: getBooks()[0],
   bookObject: getBooks(),
   typeOfCard: "myLibrary",
-  onFinishedClick: () => handleClick(getBooks()[0]),
+  changeBookStatus: () => handleClick(getBooks()[0]),
 };
 
 
@@ -52,7 +52,7 @@ ExploreCard.args = {
   book: getBooks()[0],
   bookObject: getBooks(),
   typeOfCard: "explore",
-  onFinishedClick: () => handleClick(getBooks()[0]),
+  changeBookStatus: () => handleClick(getBooks()[0]),
 };
 
 

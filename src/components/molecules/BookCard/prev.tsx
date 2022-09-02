@@ -1,22 +1,26 @@
+import { ThemeContext } from "@emotion/react";
 import {
   Box,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
+  IconButton,
   LinearProgress,
   linearProgressClasses,
   Typography,
 } from "@mui/material";
 import { makeStyles, styled } from "@mui/styles";
+import { useState } from "@storybook/addons";
 import { Theme as ReactTheme } from "@emotion/react";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
 import { IconAndTextComponent } from "../IcontAndText/IconAndText";
 import { ReactComponent as Time } from "./../../../assets/icons/time.svg";
 import { ReactComponent as UserIcon } from "./../../../assets/icons/UserIcon.svg";
+import { ReactComponent as Entreprenuer } from "./../../../assets/icons/entrepreneurship.svg";
 import Theme from "../../../Themes/themes";
 import { ButtonComponent } from "../../atoms/Button/Button";
 import Add from "@material-ui/icons/Add";
-import { Link } from "react-router-dom";
 
 const useStyles: any = makeStyles((theme: ReactTheme) => ({
   flexGrow: {
@@ -57,24 +61,9 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
     fontSize: "16px",
     lineHeight: "20px",
   },
-  addToLibrary: {},
-  explore: {
-    marginTop: "36px",
-  },
   spacing: {
     gap: Theme.spacing(4),
   },
-  linearProgress: {
-    height: "12px !important",
-    borderRadius: 5,
-    [`&.${linearProgressClasses.colorPrimary}`]: {
-      backgroundColor: Theme.palette.grey[200],
-    },
-    [`& .${linearProgressClasses.bar}`]: {
-      borderRadius: 5,
-      backgroundColor: "#E1ECFC",
-    },
-  }
 }));
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -102,97 +91,19 @@ export type Book = {
   readTime: string;
   readersCount: string;
   status: string;
-  category: string;
-  tags:Array<string>
 };
 
 export interface BookCardComponentProps {
   book: Book;
   typeOfCard?: string;
-  changeBookStatus: (arg: Book) => void;
+  onFinishedClick: (arg: any) => void;
   bookObject: Array<Book>;
-  isCategoryTab?: boolean;
-}
-
-const buttonPropTypes = {
-  myLibrary: {
-    buttonVisiable: true,
-    buttonText: "Add to Library",
-    buttonClassName: "button1",
-    startIcon: <Add />,
-    linearBarVisible: false,
-    linearBarValue: 0
-  },
-  finished: {
-    buttonVisiable: true,
-    buttonText: "Read Again",
-    buttonClassName: "button2",
-    startIcon: null,
-    linearBarVisible: true,
-    linearBarValue: 100
-  },
-  reading:{
-    buttonVisiable: true,
-    buttonText: "Finished",
-    buttonClassName: "button2",
-    startIcon: null,
-    linearBarVisible: true,
-    linearBarValue: 30,
-  },
-  exploreReading:{
-    buttonVisiable: false,
-    buttonText: "",
-    buttonClassName: "",
-    startIcon: null,
-    linearBarVisible: true,
-    linearBarValue: 30,
-  },
-  exploreFinished:{
-    buttonVisiable: false,
-    buttonText: "Finished",
-    buttonClassName: "button2",
-    startIcon: null,
-    linearBarVisible: true,
-    linearBarValue: 100,
-  }
-}
-
-interface buttonAndBarParam {
-  buttonVisiable: boolean;
-  buttonText: string,
-  buttonClassName: string,
-  startIcon: React.ReactNode | null,
-  linearBarVisible: boolean,
-  linearBarValue: number,
 }
 
 export const BookCardComponent = (props: BookCardComponentProps) => {
   const classes = useStyles();
   const images = require.context("../../../assets/CoverPages", true);
-
-  let typeOfCard = props.typeOfCard;
-  let boxClassName = classes.addToLibrary;
-  let linearBoxClassName = classes.addToLibrary;
-  let buttonAndBar : buttonAndBarParam = buttonPropTypes.myLibrary;
-
-  if (typeOfCard === "myLibrary") {
-    buttonAndBar = buttonPropTypes.myLibrary;
-  } else if (typeOfCard === "finished" && !props.isCategoryTab) {
-    boxClassName = classes.finish;
-    buttonAndBar = buttonPropTypes.finished;
-  } else if (typeOfCard === "reading" && !props.isCategoryTab) {
-    boxClassName = classes.finish;
-    linearBoxClassName = classes.addToLibrary;
-    buttonAndBar = buttonPropTypes.reading;
-  } else if (props.isCategoryTab && props.typeOfCard !== "myLibrary") {
-    linearBoxClassName = classes.explore;
-    if (props.book.status === "reading") {    
-    buttonAndBar = buttonPropTypes.exploreReading;
-    } else {
-      buttonAndBar = buttonPropTypes.exploreFinished;
-    }
-  }
-
+  const typeOfCard = props.typeOfCard;
   return (
     <Box>
       <Card
@@ -200,16 +111,16 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
           width: "284px",
           height: "466px",
           borderRadius: "8px",
+          margin: "15px"
         }}
       >
-        <Link to={`/bookdetails/${props.book.id}`} style={{textDecoration:"none"}}>
         <CardMedia
           component="img"
           height="294.1px"
           width="292px"
           src={images(`./${props.book.imageLink}`)}
         />
-        <CardContent className={classes.spacing} style={{paddingBottom:"16px"}}>
+        <CardContent className={classes.spacing}>
           <Box className={classes.titleOfBook}>
             <TypographyComponent
               className={classes.titleOfBook}
@@ -239,27 +150,48 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
             />
           </Box>
         </CardContent>
-        </Link>
         <Box>
-          <Box className={boxClassName}>
-            {buttonAndBar.buttonVisiable === true && (
+          {typeOfCard === "myLibrary" && (
+            <Box>
               <ButtonComponent
-                className={buttonAndBar.buttonClassName}
-                children={buttonAndBar.buttonText}
-                startIcon={buttonAndBar.startIcon}
-                onClick={()=>props.changeBookStatus(props.book)}
+                children="Add to Library"
+                className="button1"
+                startIcon={<Add />}
+                onClick={props.onFinishedClick}
               />
-            )}
-          </Box>
-          <Box className={linearBoxClassName}>
-            {buttonAndBar.linearBarVisible === true && (
-              <LinearProgress
-                className={classes.linearProgress}
-                variant="determinate"
-                value={buttonAndBar.linearBarValue}
-              />
-            )}
-          </Box>
+            </Box>
+          )}
+
+          {typeOfCard === "finished" && (
+            <Box>
+              <Box className={classes.finish}>
+                <ButtonComponent
+                  children="Read Again"
+                  startIcon={undefined}
+                  className="button2"
+                />
+              </Box>
+              <BorderLinearProgress variant="determinate" value={100} />
+            </Box>
+          )}
+
+          {typeOfCard === "reading" && (
+            <Box>
+              <Box className={classes.finish}>
+                <ButtonComponent
+                  children="Finished"
+                  startIcon={undefined}
+                  className="button2"
+                />
+              </Box>
+              <BorderLinearProgress variant="determinate" value={30} />
+            </Box>
+          )}
+          {typeOfCard === "explore" && (
+            <Box sx={{marginTop:"36px"}}>
+              <BorderLinearProgress variant="determinate" value={30} />
+            </Box>
+          )}
         </Box>
       </Card>
     </Box>

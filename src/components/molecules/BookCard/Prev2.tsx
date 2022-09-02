@@ -1,22 +1,27 @@
+import { ThemeContext } from "@emotion/react";
 import {
   Box,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
+  IconButton,
   LinearProgress,
   linearProgressClasses,
   Typography,
 } from "@mui/material";
 import { makeStyles, styled } from "@mui/styles";
+import { useState } from "@storybook/addons";
 import { Theme as ReactTheme } from "@emotion/react";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
 import { IconAndTextComponent } from "../IcontAndText/IconAndText";
 import { ReactComponent as Time } from "./../../../assets/icons/time.svg";
 import { ReactComponent as UserIcon } from "./../../../assets/icons/UserIcon.svg";
+import { ReactComponent as Entreprenuer } from "./../../../assets/icons/entrepreneurship.svg";
 import Theme from "../../../Themes/themes";
 import { ButtonComponent } from "../../atoms/Button/Button";
 import Add from "@material-ui/icons/Add";
-import { Link } from "react-router-dom";
+import { Children } from "react";
 
 const useStyles: any = makeStyles((theme: ReactTheme) => ({
   flexGrow: {
@@ -63,17 +68,6 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
   },
   spacing: {
     gap: Theme.spacing(4),
-  },
-  linearProgress: {
-    height: "12px !important",
-    borderRadius: 5,
-    [`&.${linearProgressClasses.colorPrimary}`]: {
-      backgroundColor: Theme.palette.grey[200],
-    },
-    [`& .${linearProgressClasses.bar}`]: {
-      borderRadius: 5,
-      backgroundColor: "#E1ECFC",
-    },
   }
 }));
 
@@ -109,16 +103,16 @@ export type Book = {
 export interface BookCardComponentProps {
   book: Book;
   typeOfCard?: string;
-  changeBookStatus: (arg: Book) => void;
+  onFinishedClick: (arg: any) => void;
   bookObject: Array<Book>;
   isCategoryTab?: boolean;
 }
-
 const buttonPropTypes = {
   myLibrary: {
     buttonVisiable: true,
     buttonText: "Add to Library",
     buttonClassName: "button1",
+    boxClassName: "addToLibrary",
     startIcon: <Add />,
     linearBarVisible: false,
     linearBarValue: 0
@@ -127,6 +121,7 @@ const buttonPropTypes = {
     buttonVisiable: true,
     buttonText: "Read Again",
     buttonClassName: "button2",
+    boxClassName: "finish",
     startIcon: null,
     linearBarVisible: true,
     linearBarValue: 100
@@ -135,61 +130,56 @@ const buttonPropTypes = {
     buttonVisiable: true,
     buttonText: "Finished",
     buttonClassName: "button2",
-    startIcon: null,
+    boxClassName: "finish",
     linearBarVisible: true,
     linearBarValue: 30,
-  },
-  exploreReading:{
-    buttonVisiable: false,
-    buttonText: "",
-    buttonClassName: "",
-    startIcon: null,
-    linearBarVisible: true,
-    linearBarValue: 30,
-  },
-  exploreFinished:{
-    buttonVisiable: false,
-    buttonText: "Finished",
-    buttonClassName: "button2",
-    startIcon: null,
-    linearBarVisible: true,
-    linearBarValue: 100,
   }
-}
 
-interface buttonAndBarParam {
-  buttonVisiable: boolean;
-  buttonText: string,
-  buttonClassName: string,
-  startIcon: React.ReactNode | null,
-  linearBarVisible: boolean,
-  linearBarValue: number,
 }
 
 export const BookCardComponent = (props: BookCardComponentProps) => {
   const classes = useStyles();
   const images = require.context("../../../assets/CoverPages", true);
 
-  let typeOfCard = props.typeOfCard;
+  const typeOfCard = props.typeOfCard;
+  let buttonClassName = "";
   let boxClassName = classes.addToLibrary;
   let linearBoxClassName = classes.addToLibrary;
-  let buttonAndBar : buttonAndBarParam = buttonPropTypes.myLibrary;
+  let linearBarValue = 0;
+  let buttonVisiable = true;
+  let buttonText = "";
+  let linearBarVisible = true;
+  let startIcon = undefined;
 
   if (typeOfCard === "myLibrary") {
-    buttonAndBar = buttonPropTypes.myLibrary;
+    buttonVisiable = true;
+    buttonText = "Add to Library";
+    buttonClassName = "button1";
+    boxClassName = classes.addToLibrary;
+    startIcon = <Add />;
+    linearBarVisible = false;
   } else if (typeOfCard === "finished" && !props.isCategoryTab) {
+    buttonVisiable = true;
+    buttonText = "Read Again";
+    buttonClassName = "button2";
     boxClassName = classes.finish;
-    buttonAndBar = buttonPropTypes.finished;
+    linearBarVisible = true;
+    linearBarValue = 100;
   } else if (typeOfCard === "reading" && !props.isCategoryTab) {
+    buttonVisiable = true;
+    buttonText = "Finished";
+    buttonClassName = "button2";
     boxClassName = classes.finish;
-    linearBoxClassName = classes.addToLibrary;
-    buttonAndBar = buttonPropTypes.reading;
+    linearBarVisible = true;
+    linearBarValue = 30;
   } else if (props.isCategoryTab && props.typeOfCard !== "myLibrary") {
+    buttonVisiable = false;
     linearBoxClassName = classes.explore;
-    if (props.book.status === "reading") {    
-    buttonAndBar = buttonPropTypes.exploreReading;
+    linearBarVisible = true;
+    if (props.book.status === "reading") {
+      linearBarValue = 30;
     } else {
-      buttonAndBar = buttonPropTypes.exploreFinished;
+      linearBarValue = 100;
     }
   }
 
@@ -200,16 +190,16 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
           width: "284px",
           height: "466px",
           borderRadius: "8px",
+          margin: "15px",
         }}
       >
-        <Link to={`/bookdetails/${props.book.id}`} style={{textDecoration:"none"}}>
         <CardMedia
           component="img"
           height="294.1px"
           width="292px"
           src={images(`./${props.book.imageLink}`)}
         />
-        <CardContent className={classes.spacing} style={{paddingBottom:"16px"}}>
+        <CardContent className={classes.spacing}>
           <Box className={classes.titleOfBook}>
             <TypographyComponent
               className={classes.titleOfBook}
@@ -239,24 +229,22 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
             />
           </Box>
         </CardContent>
-        </Link>
         <Box>
           <Box className={boxClassName}>
-            {buttonAndBar.buttonVisiable === true && (
+            {buttonVisiable === true && (
               <ButtonComponent
-                className={buttonAndBar.buttonClassName}
-                children={buttonAndBar.buttonText}
-                startIcon={buttonAndBar.startIcon}
-                onClick={()=>props.changeBookStatus(props.book)}
+                className={buttonClassName}
+                children={buttonText}
+                startIcon={startIcon}
+                onClick={props.onFinishedClick}
               />
             )}
           </Box>
           <Box className={linearBoxClassName}>
-            {buttonAndBar.linearBarVisible === true && (
-              <LinearProgress
-                className={classes.linearProgress}
+            {linearBarVisible === true && (
+              <BorderLinearProgress
                 variant="determinate"
-                value={buttonAndBar.linearBarValue}
+                value={linearBarValue}
               />
             )}
           </Box>

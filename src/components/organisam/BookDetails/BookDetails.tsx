@@ -9,13 +9,23 @@ import { ReactComponent as Time } from "./../../../assets/icons/time.svg";
 import { TabsBookDetailComponent } from "../../molecules/TabsInBookDetails/TabsInBookDetailsTab";
 
 export interface BookDeatailsProps {
-  book: Book;
+  book: Book ;
+  changeBookStatus: (arg: Book) => void;
 }
 
 export const BookDetailsComponenet = (props: BookDeatailsProps) => {
+  let buttonText = "Add to library";
+  const {book, changeBookStatus} = props;
+  if(book?.status==="myLibrary"){
+    buttonText = "Add to Library"
+  }else if(book?.status === "reading"){
+    buttonText = "Finished"
+  }else {
+    buttonText = "Read Again"
+  }
   const images = require.context("../../../assets/CoverPages", true);
   return (
-    <Grid container width="62.7%">
+    <Grid container style={{display: "flex", justifyContent:"left", }}>
       <Grid item>
         <Grid container direction="row">
           <Grid item md={9}>
@@ -34,7 +44,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                       variant="heading"
                       color={Theme.palette.text_color.main}
                     >
-                      {props.book.title}
+                      {props.book?.title}
                     </TypographyComponent>
                   </Grid>
                   <Grid item>
@@ -51,14 +61,14 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                       variant="body2"
                       color={Theme.palette.text_color.light}
                     >
-                      <span>By {props.book.author}</span>
+                      <span>By {props.book?.author}</span>
                     </TypographyComponent>
                   </Grid>
                   <Grid item>
                     <IconAndTextComponent
                       iconSource={<Time />}
                       variant="caption1"
-                      title={`${props.book.readTime} minutes`}
+                      title={`${props.book?.readTime} minutes`}
                       color={Theme.palette.text_color.light}
                     />
                   </Grid>
@@ -77,7 +87,8 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                     <ButtonComponent
                       className="button4"
                       variant="contained"
-                      children="Finish Reading"
+                      children={buttonText}
+                      onClick={()=>changeBookStatus(book)}
                     />
                   </Grid>
                   <Grid item></Grid>
@@ -91,16 +102,16 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item md={3} marginTop={Theme.spacing(18)}>
+          <Grid item md={3} marginTop={Theme.spacing(10)}>
             <img
-              src={images(`./${props.book.imageLink}`)}
+              src={images(`./${props.book?.imageLink}`)}
               alt="BookCoverPage"
-              style={{ width: "21.3vw", height: "21.3vw" }}
+              style={{ width: "19vw", height: "19vw" }}
             />
           </Grid>
         </Grid>
       </Grid>
-      <Grid item marginTop={Theme.spacing(15)} md={10}>
+      <Grid item marginTop={Theme.spacing(15)} md={10} display= "flex" justifyContent="left !important">
         <TabsBookDetailComponent />
       </Grid>
     </Grid>

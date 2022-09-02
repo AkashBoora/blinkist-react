@@ -4,10 +4,10 @@ import { makeStyles, styled } from "@mui/styles";
 
 const useStyles = makeStyles({
     editorial:{
-        // width: "214px"
+        width: "214px"
     },
     general:{
-        // width: "142px"
+        width: "142px"
     }
 })
 const Items = styled("div")({
@@ -29,7 +29,7 @@ export const FooterNavListComponent = (props: FooterNavListComponentProps) => {
     className = classes.editorial
   }
   return (
-    <div className={className}>
+    <div className={className} >
       <TypographyComponent
         variant="body1"
         color={Theme.palette.text_color.main}

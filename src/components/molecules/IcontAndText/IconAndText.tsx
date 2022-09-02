@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     cursor: "pointer",
     fontFamily: "Cera Pro",
     alignItems: "center",
-    gap: "8px"
+    gap: "8px",
   },
 });
 
@@ -37,18 +37,18 @@ export interface IconAndTextComponentProps {
     | "caption2"
     | undefined;
   className?: string;
-  onClick?: () => void;
+  onClick?: (arg: any) => void;
   style?: React.CSSProperties;
   color?: any;
+  src?: string;
 }
 
 export const IconAndTextComponent = (props: IconAndTextComponentProps) => {
   const styles = useStyles();
   return (
     <div className={styles.main}>
-      <Icon>
-        {props.iconSource}
-      </Icon>
+      <Icon>{props.iconSource}</Icon>
+      <img src={props.src} alt={props.src}></img>
       <Typography
         variant={props.variant}
         color={props.color}

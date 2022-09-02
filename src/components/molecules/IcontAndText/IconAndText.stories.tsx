@@ -37,3 +37,4 @@ EntrepreneurIcon.args = {
   color: Theme.palette.text_color.light,
   title: "Entreprenuership",
 };
+
