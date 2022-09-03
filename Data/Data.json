@@ -28,7 +28,7 @@
       "year": 1952,
       "readTime": "13",
       "readersCount": "",
-      "status": "reading",
+      "status": "myLibrary",
       "category": "entrepreneurship",
       "tags": []
     },
@@ -44,7 +44,7 @@
       "year": 1836,
       "readTime": "15",
       "readersCount": "",
-      "status": "finished",
+      "status": "reading",
       "category": "entrepreneurship",
       "tags": []
     },
@@ -60,7 +60,7 @@
       "year": 1351,
       "readTime": "12",
       "readersCount": "",
-      "status": "finished",
+      "status": "myLibrary",
       "category": "entrepreneurship",
       "tags": []
     },
@@ -92,7 +92,7 @@
       "year": 1200,
       "readTime": "13",
       "readersCount": "",
-      "status": "reading",
+      "status": "myLibrary",
       "category": "politics",
       "tags": []
     },
@@ -124,7 +124,7 @@
       "year": 1835,
       "readTime": "13",
       "readersCount": "1.9k",
-      "status": "finished",
+      "status": "myLibrary",
       "category": "politics",
       "tags": []
     },
@@ -156,7 +156,7 @@
       "year": 1970,
       "readTime": "12",
       "readersCount": "16k",
-      "status": "reading",
+      "status": "finished",
       "category": "marketing & sales",
       "tags": []
     },
@@ -172,7 +172,7 @@
       "year": -600,
       "readTime": "13",
       "readersCount": "1.9k",
-      "status": "reading",
+      "status": "myLibrary",
       "category": "marketing & sales",
       "tags": []
     }

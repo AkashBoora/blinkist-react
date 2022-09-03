@@ -53,7 +53,7 @@ const useStyles = makeStyles({
 export const HeaderComponent = () => {
   const classes = useStyles();
 
-  const { logout, isAuthenticated, user } = useAuth0();
+  const { logout, user } = useAuth0();
 
   const [clicked, handleClicked] = useState(false);
   const [logoutButton, setLogOutButton] = useState(false);

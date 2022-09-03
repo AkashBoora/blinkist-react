@@ -50,7 +50,7 @@ export const RootTemplate = (props: MyProps) => {
         </Grid>
         <Grid
           item
-          sx={{ display: "flex", justifyContent: "center", }}
+          sx={{ display: "flex", justifyContent: "center", minHeight: "43.06vh"}}
         >
           {props.body}
         </Grid>
