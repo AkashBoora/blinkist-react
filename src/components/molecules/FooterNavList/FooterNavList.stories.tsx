@@ -14,6 +14,5 @@ export default {
   export const FooterNavList = Template.bind({});
   FooterNavList.args={
     title: FooterNavData.Editorial.title,
-    data: FooterNavData.Editorial.data,
-    type: "editorial"
+    data: FooterNavData.Editorial.data
   }

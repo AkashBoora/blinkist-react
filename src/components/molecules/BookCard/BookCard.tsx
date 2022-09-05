@@ -4,7 +4,8 @@ import {
   CardContent,
   CardMedia,
   LinearProgress,
-  linearProgressClasses
+  linearProgressClasses,
+  ThemeProvider,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Theme as ReactTheme } from "@emotion/react";
@@ -29,14 +30,6 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
     paddingBottom: "8px",
     fontFamily: "Cera Pro",
   },
-  authorName: {
-    color: "#6D787E",
-    fontWeight: "500",
-    fontSize: "16px",
-    fontFamily: "Cera Pro",
-    lineHeight: "20px",
-    paddingTop: "16px",
-  },
 
   Reads: {
     display: "flex",
@@ -54,7 +47,7 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
     fontStyle: "normal",
     fontWeight: "500",
     fontSize: "16px",
-    lineHeight: "20px",
+    lineHeight: "20px"
   },
   addToLibrary: {},
   explore: {
@@ -64,6 +57,8 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
     gap: Theme.spacing(4),
   },
   linearProgress: {
+
+    width:"100% !important",
     height: "12px !important",
     borderRadius: 5,
     [`&.${linearProgressClasses.colorPrimary}`]: {
@@ -73,9 +68,8 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
       borderRadius: 5,
       backgroundColor: "#E1ECFC",
     },
-  }
+  },
 }));
-
 
 export type Book = {
   id: number;
@@ -91,7 +85,7 @@ export type Book = {
   readersCount: string;
   status: string;
   category: string;
-  tags:Array<string>
+  tags: Array<string>;
 };
 
 export interface BookCardComponentProps {
@@ -102,14 +96,14 @@ export interface BookCardComponentProps {
   isCategoryTab?: boolean;
 }
 
-const buttonPropTypes = {
+const buttonPropTypes: Record<string, buttonAndBarParam> = {
   myLibrary: {
     buttonVisiable: true,
     buttonText: "Add to Library",
     buttonClassName: "button1",
     startIcon: <Add />,
     linearBarVisible: false,
-    linearBarValue: 0
+    linearBarValue: 0,
   },
   finished: {
     buttonVisiable: true,
@@ -117,9 +111,9 @@ const buttonPropTypes = {
     buttonClassName: "button2",
     startIcon: null,
     linearBarVisible: true,
-    linearBarValue: 100
+    linearBarValue: 100,
   },
-  reading:{
+  reading: {
     buttonVisiable: true,
     buttonText: "Finished",
     buttonClassName: "button2",
@@ -127,31 +121,40 @@ const buttonPropTypes = {
     linearBarVisible: true,
     linearBarValue: 30,
   },
-  exploreReading:{
+  exploreReading: {
     buttonVisiable: false,
     buttonText: "",
-    buttonClassName: "",
+    buttonClassName: undefined,
     startIcon: null,
     linearBarVisible: true,
     linearBarValue: 30,
   },
-  exploreFinished:{
+  exploreFinished: {
     buttonVisiable: false,
     buttonText: "Finished",
     buttonClassName: "button2",
     startIcon: null,
     linearBarVisible: true,
     linearBarValue: 100,
-  }
-}
+  },
+};
 
 interface buttonAndBarParam {
   buttonVisiable: boolean;
-  buttonText: string,
-  buttonClassName: string,
-  startIcon: React.ReactNode | null,
-  linearBarVisible: boolean,
-  linearBarValue: number,
+  buttonText: string;
+  buttonClassName:
+    | "text"
+    | "button1"
+    | "button2"
+    | "button3"
+    | "button4"
+    | "button5"
+    | "outlined"
+    | "contained"
+    | undefined;
+  startIcon: React.ReactNode | null;
+  linearBarVisible: boolean;
+  linearBarValue: number;
 }
 
 export const BookCardComponent = (props: BookCardComponentProps) => {
@@ -159,97 +162,101 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
 
   let typeOfCard = props.typeOfCard;
   let boxClassName = classes.addToLibrary;
-  let linearBoxClassName = classes.addToLibrary;
-  let buttonAndBar : buttonAndBarParam = buttonPropTypes.myLibrary;
-  
+  let buttonAndBar: buttonAndBarParam = buttonPropTypes.myLibrary;
 
   if (typeOfCard === "myLibrary") {
+    boxClassName = classes.addToLibrary;
     buttonAndBar = buttonPropTypes.myLibrary;
   } else if (typeOfCard === "finished" && !props.isCategoryTab) {
     boxClassName = classes.finish;
     buttonAndBar = buttonPropTypes.finished;
   } else if (typeOfCard === "reading" && !props.isCategoryTab) {
     boxClassName = classes.finish;
-    linearBoxClassName = classes.addToLibrary;
     buttonAndBar = buttonPropTypes.reading;
-  } else if (props.isCategoryTab && props.typeOfCard !== "myLibrary") {
-    linearBoxClassName = classes.explore;
-    if (props.book.status === "reading") {    
+  } else if (props.isCategoryTab && props.book.status === "reading") {
+    boxClassName = classes.explore;
     buttonAndBar = buttonPropTypes.exploreReading;
-    } else {
-      buttonAndBar = buttonPropTypes.exploreFinished;
-    }
+  } else {
+    boxClassName = classes.explore;
+    buttonAndBar = buttonPropTypes.exploreFinished;
   }
 
   return (
-    <Box data-testId="bookCard">
-      <Card
-        sx={{
-          width: "284px",
-          height: "466px",
-          borderRadius: "8px",
-        }}
-      >
-        <Link to={`/bookdetails/${props.book.id}`} style={{textDecoration:"none"}}>
-        <CardMedia
-          component="img"
-          height="294.1px"
-          width="292px"
-          src={props.book.imageLink}
-        />
-        <CardContent className={classes.spacing} style={{paddingBottom:"16px"}}>
-          <Box className={classes.titleOfBook}>
-            <TypographyComponent
-              className={classes.titleOfBook}
-              variant="subtitle2"
-              children={props.book.title}
+    <ThemeProvider theme={Theme}>
+      <Box data-testId="bookCard">
+        <Card
+          sx={{
+            width: "284px",
+            height: "466px",
+            borderRadius: "8px",
+          }}
+        >
+          <Link
+            to={`/bookdetails/${props.book.id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <CardMedia
+              component="img"
+              height="294.1px"
+              width="292px"
+              src={props.book.imageLink}
             />
-          </Box>
+            <CardContent
+              className={classes.spacing}
+              style={{ paddingBottom: "14px" }}
+            >
+              <Box className={classes.titleOfBook}>
+                <TypographyComponent
+                  variant="subtitle2"
+                  children={props.book.title}
+                />
+              </Box>
+              <Box>
+                <TypographyComponent
+                  variant="body2"
+                  color={Theme.palette.text_color.light}
+                  children={props.book.author}
+                />
+              </Box>
+              <Box className={classes.Reads}>
+                <IconAndTextComponent
+                  iconSource={<Time />}
+                  variant="caption1"
+                  title={`${props.book.readTime} minutes`}
+                  color={Theme.palette.text_color.light}
+                />
+                <IconAndTextComponent
+                  iconSource={<UserIcon />}
+                  variant="caption1"
+                  title={props.book.readersCount}
+                  color={Theme.palette.text_color.light}
+                />
+              </Box>
+            </CardContent>
+          </Link>
           <Box>
-            <TypographyComponent
-              className={classes.authorName}
-              variant="subtitle3"
-              children={props.book.author}
-            />
+            <Box className={boxClassName}>
+              {buttonAndBar.buttonVisiable === true && (
+                <ButtonComponent
+                  variant={buttonAndBar.buttonClassName}
+                  children={buttonAndBar.buttonText}
+                  startIcon={buttonAndBar.startIcon}
+                  onClick={() => props.changeBookStatus(props.book)}
+                />
+              )}
+            </Box>
+            <Box>
+              {buttonAndBar.linearBarVisible === true && (
+                <LinearProgress
+                  className={classes.linearProgress}
+                  variant="determinate"
+                  value={buttonAndBar.linearBarValue}
+                />
+              )}
+            </Box>
           </Box>
-          <Box className={classes.Reads}>
-            <IconAndTextComponent
-              iconSource={<Time />}
-              variant="caption1"
-              title={`${props.book.readTime} minutes`}
-              color={Theme.palette.text_color.light}
-            />
-            <IconAndTextComponent
-              iconSource={<UserIcon />}
-              variant="caption1"
-              title={props.book.readersCount}
-              color={Theme.palette.text_color.light}
-            />
-          </Box>
-        </CardContent>
-        </Link>
-        <Box>
-          <Box className={boxClassName}>
-            {buttonAndBar.buttonVisiable === true && (
-              <ButtonComponent
-                className={buttonAndBar.buttonClassName}
-                children={buttonAndBar.buttonText}
-                startIcon={buttonAndBar.startIcon}
-                onClick={()=>props.changeBookStatus(props.book)}
-              />
-            )}
-          </Box>
-          <Box className={linearBoxClassName}>
-            {buttonAndBar.linearBarVisible === true && (
-              <LinearProgress
-                className={classes.linearProgress}
-                variant="determinate"
-                value={buttonAndBar.linearBarValue}
-              />
-            )}
-          </Box>
-        </Box>
-      </Card>
-    </Box>
+        </Card>
+      </Box>
+    </ThemeProvider>
   );
 };

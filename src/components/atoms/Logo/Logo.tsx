@@ -11,19 +11,13 @@ const useStyles = makeStyles({
     }
 })
 export interface LogoComponentProps{
-    classing?: "medium" | "small",
     style?: React.CSSProperties
 }
 
 export const LogoComponent = (props:LogoComponentProps)=>{
-    let classes = useStyles();
-    let className = classes.medium;
-    if(props.classing === "small"){
-        className = classes.small;
-    }
     return(
         <div data-testid="logo">
-            <img style={props.style} src={Logo} className={className} alt="BlinkistLogo"></img>
+            <img style={props.style} src={Logo} alt="BlinkistLogo"></img>
         </div>
     )
 }

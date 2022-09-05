@@ -3,7 +3,7 @@ import { getBooks } from "./../../../data/Data";
 import { BrowserRouter } from "react-router-dom";
 import { BookCardComponent } from "./BookCard";
 
-const handleChange = () => {};
+const handleChange = jest.fn();
 
 const Test = (args: any) => {
   return (

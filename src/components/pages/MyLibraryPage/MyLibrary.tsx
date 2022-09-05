@@ -1,69 +1,15 @@
-import { Box, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { Book } from "../../molecules/BookCard/BookCard";
-import { FooterComponent } from "../../molecules/Footer/Footer";
-import { HeaderComponent } from "../../organisam/Header/Header";
+import React from "react";
 import { RootTemplate } from "../../templates/Template";
-import { HomePageTabComponent } from "../../organisam/HomePageTabs/HomePageTabs";
-import { fetchAllBooks, updateBook } from "../../../APIs";
+import { MyLibraryPageBodyComponent } from "../../organisam/MyLibraryPageBody.tsx/MyLibraryPageBody";
 
 
 
-// const Entrepreneurship = (props: { book: data[]; setData: any }) => {
 export const MyLibraryPageComponent = () => {
-  const [bookData, setBookData] = useState<Book[]>([]);
-  const [dataModifiedToggle, setDataModifiedToggle] = useState(false);
-
-  useEffect(() => {
-    fetchAllBooks().then((books)=>setBookData(books));
-  }, []);
-
-  useEffect(() => {
-    fetchAllBooks().then((books)=>setBookData(books));
-  }, [dataModifiedToggle]);
-
-  async function changeBookStatus(book: Book) {
-    if (book.status === "myLibrary") {
-      book.status = "reading";
-    } else if (book.status === "reading") {
-      book.status = "finished";
-    } else {
-      book.status = "reading";
-    }
-    updateBook(book);
-    setDataModifiedToggle((prevState: boolean) => !prevState);
-  }
   return (
     <RootTemplate
-      header={<HeaderComponent></HeaderComponent>}
       body={
-        <div data-testid="myLibraryPageComponent">
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "912px",
-            }}
-          >
-            <Typography
-              variant="h5"
-              fontFamily={"Cera Pro"}
-              fontWeight="Bold"
-              fontSize={"36px"}
-              paddingBottom="3%"
-              color="#03314B"
-            >
-              My Library
-            </Typography>
-
-            <HomePageTabComponent
-              changeBookStatus={changeBookStatus}
-              books={bookData}
-            />
-          </Box>
-        </div>
+        <MyLibraryPageBodyComponent/>
       }
-      footer={<FooterComponent></FooterComponent>}
     />
   );
 };

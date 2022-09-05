@@ -3,6 +3,8 @@ import React from "react";
 
 import { Grid } from "@mui/material";
 import Theme from "../../Themes/themes";
+import { HeaderComponent } from "../organisam/Header/Header";
+import { FooterComponent } from "../organisam/Footer/Footer";
 
 export const useStyles = makeStyles({
   root: {
@@ -27,9 +29,7 @@ export const useStyles = makeStyles({
   },
 });
 export type MyProps = {
-  header: React.ReactNode;
   body: React.ReactNode;
-  footer: React.ReactNode;
 };
 export const RootTemplate = (props: MyProps) => {
 
@@ -46,7 +46,7 @@ export const RootTemplate = (props: MyProps) => {
             paddingBottom: "2%",
           }}
         >
-          {props.header}
+          <HeaderComponent/>
         </Grid>
         <Grid
           item
@@ -63,7 +63,7 @@ export const RootTemplate = (props: MyProps) => {
             mt: "60px",
           }}
         >
-          {props.footer}
+          <FooterComponent/>
         </Grid>
       </Grid>
     </ThemeProvider>

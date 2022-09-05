@@ -5,5 +5,4 @@ export default{
     component: LogoComponent
 }
 
-export const Medium = ()=> <LogoComponent classing="medium"/>
-export const Small = ()=> <LogoComponent classing="small"/>
+export const Medium = ()=> <LogoComponent  />

@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/styles";
-import { Button, Grid, IconButton, Typography } from "@mui/material";
+import { Button, Grid, IconButton, ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
 import { LogoComponent } from "../../atoms/Logo/Logo";
 import { ExtendNavComponent } from "../../molecules/ExtendedNav/ExtendedNav";
@@ -64,12 +64,12 @@ export const HeaderComponent = () => {
       <Grid
         item
         className={logoutButton ? classes.visible : classes.hidden}
-        top="90%" left="69.5%"
+        top="90%" left="69.8%"
       >
         <ButtonComponent
           children="Log Out"
           onClick={() => logout()}
-          className="button5"
+          variant="button5"
         />
       </Grid>
     );
@@ -102,6 +102,7 @@ export const HeaderComponent = () => {
     );
   };
   return (
+    <ThemeProvider theme={Theme}>
     <MainContainer >
       <Grid data-testid="header" container direction="row">
         <Grid
@@ -117,7 +118,7 @@ export const HeaderComponent = () => {
         >
           <Grid item>
             <Link to="/mylibrary">
-              <LogoComponent classing="medium"/>
+              <LogoComponent style={{height: '26px', width: '124.09px'}}/>
             </Link>
           </Grid>
           <Grid item>
@@ -190,5 +191,6 @@ export const HeaderComponent = () => {
         <LogOutDropDown></LogOutDropDown>
       </Grid>
     </MainContainer>
+    </ThemeProvider>
   );
 };

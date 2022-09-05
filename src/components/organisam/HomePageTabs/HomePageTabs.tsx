@@ -12,7 +12,8 @@ const useStyles = makeStyles({
       width: "15vw",
       textAlign:"left",
       justifyContent:"left",
-      justifyItem:"left"
+      justifyItem:"left",
+      marginLeft:"0px"
     },
     content: {
       color: "#03314B",
@@ -49,7 +50,7 @@ export const HomePageTabComponent = (props: HomePageTabComponentProps) => {
                         TabIndicatorProps={{
                             style:{fontWeight:400}
                         }}>
-                        <Tab style={{textAlign:"left",justifyContent:"left"}} className={classes.tabs} label="Currently Reading" value="1" sx={{textAlign:"left",typography: "subtitle3", textTransform: "none"}} />
+                        <Tab className={classes.tabs} label="Currently Reading" value="1" sx={{textAlign:"left",typography: "subtitle3", textTransform: "none"}} />
                         <Tab className={classes.tabs} label="Finished" value="2" sx={{typography: "subtitle3", textTransform: "none"}}/>
                     </TabList>
                 </Box>

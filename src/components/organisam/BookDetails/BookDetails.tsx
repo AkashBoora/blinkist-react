@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, ThemeProvider } from "@mui/material";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
 import Theme from "../../../Themes/themes";
 import { Book } from "../../molecules/BookCard/BookCard";
@@ -7,15 +7,41 @@ import ArrowForword from "@material-ui/icons/ArrowForward";
 import { IconAndTextComponent } from "../../molecules/IcontAndText/IconAndText";
 import { ReactComponent as Time } from "./../../../assets/icons/time.svg";
 import { TabsBookDetailComponent } from "../TabsInBookDetails/TabsInBookDetailsTab";
+import { useEffect, useState } from "react";
+import { fetchBookById, updateBook } from "../../../APIs";
 
-export interface BookDeatailsProps {
-  book: Book ;
-  changeBookStatus: (arg: Book) => void;
-}
 
-export const BookDetailsComponenet = (props: BookDeatailsProps) => {
+export const BookDetailsComponenet = () => {
+  let url = window.location.href;
+  let id = Number(url.slice(34));
+  console.log(url);
+
+
+  const [book, setBookData] = useState<Book>();
+  const [dataModifiedToggle,setDataModifiedToggle] = useState(false);
+
+  useEffect(() => {
+    console.log("passed id",id);
+    fetchBookById(id).then((book)=>{setBookData(book); console.log(book);});
+  }, []);
+
+  useEffect(() => {
+    fetchBookById(id).then((book)=>setBookData(book));
+  }, [dataModifiedToggle]);
+
+  async function changeBookStatus(book: any) {
+    if (book.status === "myLibrary") {
+      book.status = "reading";
+    } else if (book.status === "reading") {
+      book.status = "finished";
+    } else {
+      book.status = "reading";
+    }
+    updateBook(book);
+    setDataModifiedToggle((prevState: boolean) => !prevState);
+  }
   let buttonText = "Add to library";
-  const {book, changeBookStatus} = props;
+
   if(book?.status==="myLibrary"){
     buttonText = "Add to Library"
   }else if(book?.status === "reading"){
@@ -24,6 +50,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
     buttonText = "Read Again"
   }
   return (
+    <ThemeProvider theme={Theme}>
     <Grid container data-testid="bookDetails" style={{display: "flex", justifyContent:"left", }}>
       <Grid item>
         <Grid container direction="row">
@@ -43,7 +70,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                       variant="heading"
                       color={Theme.palette.text_color.main}
                     >
-                      {props.book?.title}
+                      {book?.title}
                     </TypographyComponent>
                   </Grid>
                   <Grid item data-testid="tag">
@@ -60,14 +87,14 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                       variant="body2"
                       color={Theme.palette.text_color.light}
                     >
-                      <span>By {props.book?.author}</span>
+                      <span>By {book?.author}</span>
                     </TypographyComponent>
                   </Grid>
                   <Grid item>
                     <IconAndTextComponent
                       iconSource={<Time />}
                       variant="caption1"
-                      title={`${props.book?.readTime} minutes`}
+                      title={`${book?.readTime} minutes`}
                       color={Theme.palette.text_color.light}
                     />
                   </Grid>
@@ -77,23 +104,20 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                 <Grid container direction="row" columnSpacing={5}>
                   <Grid item>
                     <ButtonComponent
-                      className="button3"
-                      variant="outlined"
+                      variant="button3"
                       children="Readnow"
                     />
                   </Grid>
                   <Grid data-testid="button" item>
                     <ButtonComponent
-                      className="button4"
-                      variant="contained"
+                      variant="button4"
                       children={buttonText}
                       onClick={()=>changeBookStatus(book)}
                     />
                   </Grid>
                   <Grid item></Grid>
                   <ButtonComponent
-                    className="button5"
-                    variant="text"
+                    variant="button5"
                     children="send to Kindle"
                     endIcon={<ArrowForword />}
                   />
@@ -103,7 +127,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
           </Grid>
           <Grid item md={3} marginTop={Theme.spacing(10)}>
             <img
-              src={props.book.imageLink}
+              src={book?.imageLink}
               alt="BookCoverPage"
               style={{ width: "19vw", height: "19vw" }}
             />
@@ -114,5 +138,6 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
         <TabsBookDetailComponent />
       </Grid>
     </Grid>
+    </ThemeProvider>
   );
 };

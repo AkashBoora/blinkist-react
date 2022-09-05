@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, Story } from "@storybook/react";
+import { Story } from "@storybook/react";
 import { ThemeProvider } from "@emotion/react";
 import Theme from "../../../Themes/themes";
 import { BookCardComponent, BookCardComponentProps } from "./BookCard";
