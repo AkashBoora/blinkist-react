@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import { Book } from "../../molecules/BookCard/BookCard";
-import { FooterComponent } from "../../organisam/Footer/Footer";
+import { FooterComponent } from "../../molecules/Footer/Footer";
 import { HeaderComponent } from "../../organisam/Header/Header";
 import { RootTemplate } from "../../templates/Template";
 import { BookDetailsComponenet } from "../../organisam/BookDetails/BookDetails";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchAllBooks, fetchBookById, updateBook } from "../../../APIs";
 
 export interface BookDetailsPageComponentProps {}
 
@@ -22,21 +22,11 @@ export const BookDetailsPageComponent = (
   const [dataModifiedToggle,setDataModifiedToggle] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/dataBase/${id}`)
-      .then((res: any) => {
-        setBookData(res.data);
-      })
-      .catch((error: any) => console.log(error));
+    fetchBookById(id).then((book)=>setBookData(book));
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/dataBase/${id}`)
-      .then((res: any) => {
-        setBookData(res.data);
-      })
-      .catch((error: any) => console.log(error));
+    fetchBookById(id).then((book)=>setBookData(book));
   }, [dataModifiedToggle]);
 
   async function changeBookStatus(book: Book) {
@@ -47,7 +37,7 @@ export const BookDetailsPageComponent = (
     } else {
       book.status = "reading";
     }
-    await axios.put(`http://localhost:3000/dataBase/${book.id}`, book);
+    updateBook(book);
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
 

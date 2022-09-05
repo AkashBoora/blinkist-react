@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import { TypographyComponent } from "../../atoms/Typography/Typography";
 import { Book, BookCardComponent } from "../../molecules/BookCard/BookCard";
 
 export interface CardsWithStatusProps {
@@ -53,7 +54,7 @@ export const CardsWithStatusComponent = (props: CardsWithStatusProps) => {
         );
       })}
       {filteredBooks.length === 0 && 
-        <Typography
+        <TypographyComponent
         variant="h5"
         fontFamily={"Cera Pro"}
         fontWeight="Bold"
@@ -62,7 +63,7 @@ export const CardsWithStatusComponent = (props: CardsWithStatusProps) => {
         color="#03314B"
       >
           No Results Found
-      </Typography>
+      </TypographyComponent>
       }
     </Grid>
   );

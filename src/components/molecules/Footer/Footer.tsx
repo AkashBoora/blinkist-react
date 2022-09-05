@@ -4,7 +4,7 @@ import { FooterNavData } from "../../../data/FooterNavData";
 import Theme from "../../../Themes/themes";
 import { LogoComponent } from "../../atoms/Logo/Logo";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
-import { FooterNavListComponent } from "../../molecules/FooterNavList/FooterNavList";
+import { FooterNavListComponent } from "../FooterNavList/FooterNavList";
 
 const MainContainer = styled("div")({
   width: "100%",

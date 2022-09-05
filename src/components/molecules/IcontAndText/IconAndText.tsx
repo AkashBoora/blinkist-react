@@ -1,5 +1,6 @@
 import { Icon, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { TypographyComponent } from "../../atoms/Typography/Typography";
 
 const useStyles = makeStyles({
   main: {
@@ -49,14 +50,14 @@ export const IconAndTextComponent = (props: IconAndTextComponentProps) => {
     <div className={styles.main} data-testid="iconAndText">
       <Icon>{props.iconSource}</Icon>
       <img src={props.src} alt={props.src}></img>
-      <Typography
+      <TypographyComponent
         variant={props.variant}
         color={props.color}
         className={`${props.className}`}
         onClick={props.onClick}
       >
         {props.title}
-      </Typography>
+      </TypographyComponent>
     </div>
   );
 };

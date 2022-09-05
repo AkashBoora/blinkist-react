@@ -4,10 +4,10 @@ import { BannerComponent } from "../../molecules/Banner/Banner";
 import { Book } from "../../molecules/BookCard/BookCard";
 import { SearchBarComponent } from "../../molecules/SearchBar/SearchBar";
 import { CardsWithStatusComponent } from "../../organisam/CardsWithStatus/CardsWithStatus";
-import { FooterComponent } from "../../organisam/Footer/Footer";
+import { FooterComponent } from "../../molecules/Footer/Footer";
 import { HeaderComponent } from "../../organisam/Header/Header";
 import { RootTemplate } from "../../templates/Template";
-import axios from "axios";
+import { fetchAllBooks, updateBook } from "../../../APIs";
 
 let category = "";
 export const ExplorePageComponent = () => {
@@ -19,21 +19,11 @@ export const ExplorePageComponent = () => {
   const [searchText, setSearchText] = useState("");
   console.log(category);
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/dataBase")
-      .then((res: any) => {
-        setBookData(res.data);
-      })
-      .catch((error: any) => console.log(error));
+    fetchAllBooks().then((books)=>setBookData(books));
   }, []);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/dataBase")
-      .then((res: any) => {
-        setBookData(res.data);
-      })
-      .catch((error: any) => console.log(error));
+    fetchAllBooks().then((books)=>setBookData(books));
   }, [dataModifiedToggle]);
 
   async function changeBookStatus(book: Book) {
@@ -44,7 +34,7 @@ export const ExplorePageComponent = () => {
     } else {
       book.status = "reading";
     }
-    await axios.put(`http://localhost:3000/dataBase/${book.id}`, book);
+    updateBook(book);
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
 

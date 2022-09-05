@@ -13,6 +13,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Box } from "@mui/system";
 import { ButtonComponent } from "../../atoms/Button/Button";
 import Theme from "../../../Themes/themes";
+import { TypographyComponent } from "../../atoms/Typography/Typography";
 
 const MainContainer = styled("div")({
   width: "100%",
@@ -150,13 +151,12 @@ export const HeaderComponent = () => {
                 fontSize: "16px",
               }}
             >
-              <Typography
+              <TypographyComponent
                 fontFamily="Cera Pro"
-                fontWeight="500"
-                fontSize="16px"
+                variant="body2"
               >
                 My Library
-              </Typography>
+              </TypographyComponent>
             </Link>
           </Grid>
           <Grid item sx={{ marginLeft: "21%", padding: "0px" }}>

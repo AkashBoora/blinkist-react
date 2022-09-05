@@ -6,7 +6,7 @@ import { ButtonComponent } from "../../atoms/Button/Button";
 import ArrowForword from "@material-ui/icons/ArrowForward";
 import { IconAndTextComponent } from "../../molecules/IcontAndText/IconAndText";
 import { ReactComponent as Time } from "./../../../assets/icons/time.svg";
-import { TabsBookDetailComponent } from "../../molecules/TabsInBookDetails/TabsInBookDetailsTab";
+import { TabsBookDetailComponent } from "../TabsInBookDetails/TabsInBookDetailsTab";
 
 export interface BookDeatailsProps {
   book: Book ;
@@ -103,7 +103,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
           </Grid>
           <Grid item md={3} marginTop={Theme.spacing(10)}>
             <img
-              src={props.book?.imageLink}
+              src={props.book.imageLink}
               alt="BookCoverPage"
               style={{ width: "19vw", height: "19vw" }}
             />

@@ -4,10 +4,9 @@ import {
   CardContent,
   CardMedia,
   LinearProgress,
-  linearProgressClasses,
-  Typography,
+  linearProgressClasses
 } from "@mui/material";
-import { makeStyles, styled } from "@mui/styles";
+import { makeStyles } from "@mui/styles";
 import { Theme as ReactTheme } from "@emotion/react";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
 import { IconAndTextComponent } from "../IcontAndText/IconAndText";
@@ -162,6 +161,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
   let boxClassName = classes.addToLibrary;
   let linearBoxClassName = classes.addToLibrary;
   let buttonAndBar : buttonAndBarParam = buttonPropTypes.myLibrary;
+  
 
   if (typeOfCard === "myLibrary") {
     buttonAndBar = buttonPropTypes.myLibrary;
@@ -206,7 +206,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
             />
           </Box>
           <Box>
-            <Typography
+            <TypographyComponent
               className={classes.authorName}
               variant="subtitle3"
               children={props.book.author}
