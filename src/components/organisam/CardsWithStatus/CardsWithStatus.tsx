@@ -35,6 +35,7 @@ export const CardsWithStatusComponent = (props: CardsWithStatusProps) => {
         padding: "0%",
       }}
       gap="30px"
+      data-testid="cardsWithState"
     >
       {filteredBooks.length > 0 && filteredBooks.map((book: Book, index: number) => {
         return (

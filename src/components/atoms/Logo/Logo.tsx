@@ -22,7 +22,7 @@ export const LogoComponent = (props:LogoComponentProps)=>{
         className = classes.small;
     }
     return(
-        <div>
+        <div data-testid="logo">
             <img style={props.style} src={Logo} className={className} alt="BlinkistLogo"></img>
         </div>
     )

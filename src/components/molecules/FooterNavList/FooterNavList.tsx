@@ -29,7 +29,7 @@ export const FooterNavListComponent = (props: FooterNavListComponentProps) => {
     className = classes.editorial
   }
   return (
-    <div className={className} >
+    <div data-testid="footerNavList" className={className} >
       <TypographyComponent
         variant="body1"
         color={Theme.palette.text_color.main}

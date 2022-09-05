@@ -101,8 +101,8 @@ export const HeaderComponent = () => {
     );
   };
   return (
-    <MainContainer>
-      <Grid container direction="row">
+    <MainContainer >
+      <Grid data-testid="header" container direction="row">
         <Grid
           item
           container
@@ -168,7 +168,7 @@ export const HeaderComponent = () => {
                 alignItems: "center",
               }}
             >
-              <Button
+              <Button data-testid="avatar"
                 name=" "
                 endIcon={
                   logoutButton ? (

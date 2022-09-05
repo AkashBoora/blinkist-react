@@ -15,8 +15,9 @@ function App() {
         height="98vh"
         alignItems="center"
         justifyContent="center"
+        data-testid="appLoading"
       >
-        <Box display="flex" alignItems="center" justifyContent="center">
+        <Box  display="flex" alignItems="center" justifyContent="center">
           <CircularProgress size={"30px"}></CircularProgress>
           <TypographyComponent
             variant="heading"
@@ -30,7 +31,7 @@ function App() {
     );
   }
   return (
-    <div className="App">
+    <div data-testid="app">
       {!isAuthenticated ? <LoginPage /> : null}
       {isAuthenticated && <Routing />}
     </div>

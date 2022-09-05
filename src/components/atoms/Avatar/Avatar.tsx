@@ -6,7 +6,7 @@ export interface AvatarComponentProps {
 
 export const AvatarComponent = (props: AvatarComponentProps) => {
   return (
-    <Avatar
+    <Avatar data-testid="Avatar"
       sx={{ bgcolor: "#69A6E3", color: "white", width: "44px", height: "44px" }}
     >
       {props.letter}

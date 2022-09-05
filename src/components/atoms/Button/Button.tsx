@@ -109,7 +109,7 @@ export const ButtonComponent = (props: ButtonComponentProps) => {
   }
   return (
     <StyledEngineProvider injectFirst>
-      <Button
+      <Button data-testid="button"
         variant={props.variant}
         className={`${className} ${classes.button}`}
         startIcon={props.startIcon}

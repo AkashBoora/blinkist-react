@@ -56,7 +56,7 @@ export const BookDetailsPageComponent = (
       header={<HeaderComponent />}
       body={
         <div>
-          <Box
+          <Box data-testid="bookDetailsPage"
             style={{
               display: "flex",
               flexDirection: "column",

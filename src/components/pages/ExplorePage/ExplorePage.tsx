@@ -60,7 +60,7 @@ export const ExplorePageComponent = () => {
     <RootTemplate
       header={<HeaderComponent></HeaderComponent>}
       body={
-        <div style={{ justifyContent: "center" }}>
+        <div style={{ justifyContent: "center" }} data-testid="explorePageComponent">
           <Box
             style={{
               display: "flex",
@@ -75,7 +75,7 @@ export const ExplorePageComponent = () => {
               <SearchBarComponent handleChange={handleChange} />
             </Box>
 
-            <Box
+            <Box data-testid="bookData"
               sx={{ paddingTop: "1%" }}
               style={{
                 display: "flex",
@@ -83,7 +83,7 @@ export const ExplorePageComponent = () => {
                 width: "912px",
               }}
             >
-              <CardsWithStatusComponent
+              <CardsWithStatusComponent 
                 style={{ paddingTop: "2%" }}
                 isCategoryTab={true}
                 books={bookData}

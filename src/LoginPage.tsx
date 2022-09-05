@@ -11,6 +11,7 @@ function LoginPage() {
   const { loginWithRedirect } = useAuth0();
   return (
     <Grid
+      data-testid="login"
       display="flex"
       height="98vh"
       alignItems="center"

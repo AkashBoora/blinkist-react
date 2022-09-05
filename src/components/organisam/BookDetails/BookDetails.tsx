@@ -23,21 +23,20 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
   }else {
     buttonText = "Read Again"
   }
-  const images = require.context("../../../assets/CoverPages", true);
   return (
-    <Grid container style={{display: "flex", justifyContent:"left", }}>
+    <Grid container data-testid="bookDetails" style={{display: "flex", justifyContent:"left", }}>
       <Grid item>
         <Grid container direction="row">
           <Grid item md={9}>
             <Grid container direction="column" rowSpacing={10}>
-              <Grid item>
+              <Grid item data-testid="top">
                 <TypographyComponent
                   variant="body2"
                   color={Theme.palette.text_color.main}
                   name="Get the key ideas from"
                 />
               </Grid>
-              <Grid item>
+              <Grid item data-testid="title">
                 <Grid container direction="column" rowSpacing={4}>
                   <Grid item>
                     <TypographyComponent
@@ -47,7 +46,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                       {props.book?.title}
                     </TypographyComponent>
                   </Grid>
-                  <Grid item>
+                  <Grid item data-testid="tag">
                     <TypographyComponent
                       variant="subtitle1"
                       style={{ fontSize: "20px" }}
@@ -83,7 +82,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
                       children="Readnow"
                     />
                   </Grid>
-                  <Grid item>
+                  <Grid data-testid="button" item>
                     <ButtonComponent
                       className="button4"
                       variant="contained"
@@ -104,7 +103,7 @@ export const BookDetailsComponenet = (props: BookDeatailsProps) => {
           </Grid>
           <Grid item md={3} marginTop={Theme.spacing(10)}>
             <img
-              src={images(`./${props.book?.imageLink}`)}
+              src={props.book?.imageLink}
               alt="BookCoverPage"
               style={{ width: "19vw", height: "19vw" }}
             />

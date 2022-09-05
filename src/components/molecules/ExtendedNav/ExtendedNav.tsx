@@ -40,7 +40,7 @@ export interface ExtendedNavProps {
 export const ExtendNavComponent = (props: ExtendedNavProps) => {
   let classes = useStyles();
   return (
-    <Box className={classes.grid}>
+    <Box data-testid="extendedNav" className={classes.grid}>
       <Grid >
         <Container maxWidth="md">
           <Grid container spacing={5}>

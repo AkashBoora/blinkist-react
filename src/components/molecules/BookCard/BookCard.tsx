@@ -77,17 +77,6 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
   }
 }));
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: "12px",
-  borderRadius: 5,
-  [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: Theme.palette.grey[200],
-  },
-  [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 5,
-    backgroundColor: "#E1ECFC",
-  },
-}));
 
 export type Book = {
   id: number;
@@ -168,7 +157,6 @@ interface buttonAndBarParam {
 
 export const BookCardComponent = (props: BookCardComponentProps) => {
   const classes = useStyles();
-  const images = require.context("../../../assets/CoverPages", true);
 
   let typeOfCard = props.typeOfCard;
   let boxClassName = classes.addToLibrary;
@@ -194,7 +182,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
   }
 
   return (
-    <Box>
+    <Box data-testId="bookCard">
       <Card
         sx={{
           width: "284px",
@@ -207,7 +195,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
           component="img"
           height="294.1px"
           width="292px"
-          src={images(`./${props.book.imageLink}`)}
+          src={props.book.imageLink}
         />
         <CardContent className={classes.spacing} style={{paddingBottom:"16px"}}>
           <Box className={classes.titleOfBook}>

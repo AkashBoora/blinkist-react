@@ -44,7 +44,7 @@ const BottomContainer = styled("div")({
 
 export const FooterComponent = () => {
   return (
-    <MainContainer>
+    <MainContainer data-testid="footer">
       <WrapContaner>
         <Grid direction="row" display="flex">
             <LeftContainer>

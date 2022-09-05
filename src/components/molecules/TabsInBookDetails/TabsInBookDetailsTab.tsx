@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs, Theme as ThemeUi } from "@mui/material";
+import { Box, Tab } from "@mui/material";
 import { useState } from "react";
 import { BookDetailsTabData } from "../../../data/BookDetailsTabData";
 import TabPanel from "@mui/lab/TabPanel";
@@ -6,7 +6,6 @@ import TabList from "@mui/lab/TabList";
 import TabContext from "@mui/lab/TabContext";
 import { makeStyles } from "@mui/styles";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
-import Theme from "../../../Themes/themes";
 const useStyles = makeStyles({
   root: {
   },
@@ -33,9 +32,8 @@ export const TabsBookDetailComponent = () => {
     setValue(newValue);
   };
 
-  
   return (
-    <Box sx={{ justifyContent:"left !important", typography: "subtitle1" }}>
+    <Box data-testid="tabs" sx={{ justifyContent:"left !important", typography: "subtitle1" }}>
       <TabContext value={value} >
         <Box
           fontFamily={"Cera Pro"}

@@ -52,7 +52,7 @@ export interface BannerComponentProps {
 
 export const BannerComponent = (props: BannerComponentProps) => {
   return (
-      <MainBoxContainer className={props.className}>
+      <MainBoxContainer data-testid="banner" className={props.className}>
         <LeftContainer>
           <LeftTopContainer>
             <TypographyComponent variant="heading">

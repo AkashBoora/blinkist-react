@@ -1,26 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { BannerComponent } from "../../molecules/Banner/Banner";
 import { Book } from "../../molecules/BookCard/BookCard";
-import { SearchBarComponent } from "../../molecules/SearchBar/SearchBar";
-import { CardsWithStatusComponent } from "../../organisam/CardsWithStatus/CardsWithStatus";
 import { FooterComponent } from "../../organisam/Footer/Footer";
 import { HeaderComponent } from "../../organisam/Header/Header";
 import { RootTemplate } from "../../templates/Template";
 import axios from "axios";
 import { HomePageTabComponent } from "../../organisam/HomePageTabs/HomePageTabs";
 
-interface Props {
-  type: string;
-  onFinishedClick: (arg: Book) => void;
-  books: Array<Book>;
-  book: Book;
-  setData: any;
-}
 
-function handleClick(book: Book) {
-  console.log("Hello");
-}
 // const Entrepreneurship = (props: { book: data[]; setData: any }) => {
 export const MyLibraryPageComponent = () => {
   const [bookData, setBookData] = useState<Book[]>([]);
@@ -59,7 +46,7 @@ export const MyLibraryPageComponent = () => {
     <RootTemplate
       header={<HeaderComponent></HeaderComponent>}
       body={
-        <div>
+        <div data-testid="myLibraryPageComponent">
           <Box
             style={{
               display: "flex",

@@ -36,7 +36,7 @@ export const RootTemplate = (props: MyProps) => {
   return (
     <ThemeProvider theme={Theme}>
       <Grid item container direction="column" display= "flex"
-            justifyContent= "center" sx={{ textAlign: "left" }}>
+            justifyContent= "center" sx={{ textAlign: "left" }} data-testid="rootTemplate">
         <Grid
           item
           sx={{

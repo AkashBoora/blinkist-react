@@ -51,7 +51,7 @@ export const CategoryResultsComponent = () => {
     <RootTemplate
       header={<HeaderComponent></HeaderComponent>}
       body={
-        <div style={{ justifyContent: "center" }}>
+        <div style={{ justifyContent: "center" }} data-testid="cateoryResults">
           <Box
             style={{
               display: "flex",

@@ -40,7 +40,7 @@ export const HomePageTabComponent = (props: HomePageTabComponentProps) => {
       };
 
     return(
-        <Box>
+        <Box data-testid="homePageTab">
             <TabContext value={value}>
                 <Box fontFamily='Cera Pro' >
                     <TabList
