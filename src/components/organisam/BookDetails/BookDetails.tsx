@@ -14,19 +14,17 @@ import { fetchBookById, updateBook } from "../../../APIs";
 export const BookDetailsComponenet = () => {
   let url = window.location.href;
   let id = Number(url.slice(34));
-  console.log(url);
 
 
   const [book, setBookData] = useState<Book>();
   const [dataModifiedToggle,setDataModifiedToggle] = useState(false);
 
   useEffect(() => {
-    console.log("passed id",id);
-    fetchBookById(id).then((book)=>{setBookData(book); console.log(book);});
+    fetchBookById(id).then((book:Book)=>{setBookData(book);});
   }, []);
 
   useEffect(() => {
-    fetchBookById(id).then((book)=>setBookData(book));
+    fetchBookById(id).then((book:Book)=>setBookData(book));
   }, [dataModifiedToggle]);
 
   async function changeBookStatus(book: any) {

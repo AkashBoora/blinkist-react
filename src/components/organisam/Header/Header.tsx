@@ -160,7 +160,7 @@ export const HeaderComponent = () => {
               </TypographyComponent>
             </Link>
           </Grid>
-          <Grid item sx={{ marginLeft: "21%", padding: "0px" }}>
+          <Grid item sx={{ marginLeft: "420px", padding: "0px" }}>
             {" "}
             <Box
               style={{

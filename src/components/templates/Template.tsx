@@ -4,7 +4,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import Theme from "../../Themes/themes";
 import { HeaderComponent } from "../organisam/Header/Header";
-import { FooterComponent } from "../organisam/Footer/Footer";
+import { FooterComponent } from "../molecules/Footer/Footer";
 
 export const useStyles = makeStyles({
   root: {

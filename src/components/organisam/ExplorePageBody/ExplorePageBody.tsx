@@ -14,7 +14,6 @@ export const ExplorePageBodyComponent = () => {
   const [bookData, setBookData] = useState<Book[]>([]);
   const [dataModifiedToggle, setDataModifiedToggle] = useState(false);
   const [searchText, setSearchText] = useState("");
-  console.log(category);
   useEffect(() => {
     fetchAllBooks().then((books) => setBookData(books));
   }, []);
@@ -39,13 +38,12 @@ export const ExplorePageBodyComponent = () => {
     if (event.target.value !== "") {
       setSearchText(event.target.value);
     }
-    console.log("hello");
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
   return (
     <div
       style={{ justifyContent: "center" }}
-      data-testid="explorePageComponent"
+      data-testid="explorePageBodyComponent"
     >
       <Box
         style={{

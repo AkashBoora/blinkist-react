@@ -197,7 +197,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Box data-testId="bookCard">
+      <Box data-testid="bookCard">
         <Card
           sx={{
             width: "284px",

@@ -29,7 +29,7 @@ export const MyLibraryPageBodyComponent = () => {
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
   return (
-    <div data-testid="myLibraryPageComponent">
+    <div data-testid="myLibraryPageBodyComponent">
       <Box
         style={{
           display: "flex",
