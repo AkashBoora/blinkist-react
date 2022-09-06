@@ -46,7 +46,6 @@ export const CardsWithStatusComponent = (props: CardsWithStatusProps) => {
                   book={book}
                   typeOfCard={book.status}
                   changeBookStatus={props.changeBookStatus}
-                  bookObject={props.books}
                   isCategoryTab={props.isCategoryTab}
                 />
               </Grid>

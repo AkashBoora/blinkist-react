@@ -37,6 +37,31 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
     whiteSpace: "nowrap",
     paddingTop: "16px",
   },
+  myLibrarytrue:{},
+  finishedfalse:{
+    display: "flex",
+    color: "#0365F2",
+    textAlignment: "centre",
+    justifyContent: "center",
+    paddingBottom: "16px",
+    fontFamily: "Cera Pro",
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: "16px",
+    lineHeight: "20px"
+  },
+  readingfalse:{
+    display: "flex",
+    color: "#0365F2",
+    textAlignment: "centre",
+    justifyContent: "center",
+    paddingBottom: "16px",
+    fontFamily: "Cera Pro",
+    fontStyle: "normal",
+    fontWeight: "500",
+    fontSize: "16px",
+    lineHeight: "20px"
+  },
   finish: {
     display: "flex",
     color: "#0365F2",
@@ -48,6 +73,12 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
     fontWeight: "500",
     fontSize: "16px",
     lineHeight: "20px"
+  },
+  readingtrue:{
+    marginTop: "36px",
+  },
+  finishedtrue:{
+    marginTop: "36px",
   },
   addToLibrary: {},
   explore: {
@@ -90,14 +121,13 @@ export type Book = {
 
 export interface BookCardComponentProps {
   book: Book;
-  typeOfCard?: string;
+  typeOfCard: string;
   changeBookStatus: (arg: Book) => void;
-  bookObject: Array<Book>;
   isCategoryTab?: boolean;
 }
 
 const buttonPropTypes: Record<string, buttonAndBarParam> = {
-  myLibrary: {
+  myLibrarytrue: {
     buttonVisiable: true,
     buttonText: "Add to Library",
     buttonClassName: "button1",
@@ -105,7 +135,7 @@ const buttonPropTypes: Record<string, buttonAndBarParam> = {
     linearBarVisible: false,
     linearBarValue: 0,
   },
-  finished: {
+  finishedfalse: {
     buttonVisiable: true,
     buttonText: "Read Again",
     buttonClassName: "button2",
@@ -113,7 +143,7 @@ const buttonPropTypes: Record<string, buttonAndBarParam> = {
     linearBarVisible: true,
     linearBarValue: 100,
   },
-  reading: {
+  readingfalse: {
     buttonVisiable: true,
     buttonText: "Finished",
     buttonClassName: "button2",
@@ -121,7 +151,7 @@ const buttonPropTypes: Record<string, buttonAndBarParam> = {
     linearBarVisible: true,
     linearBarValue: 30,
   },
-  exploreReading: {
+  readingtrue: {
     buttonVisiable: false,
     buttonText: "",
     buttonClassName: undefined,
@@ -129,7 +159,7 @@ const buttonPropTypes: Record<string, buttonAndBarParam> = {
     linearBarVisible: true,
     linearBarValue: 30,
   },
-  exploreFinished: {
+  finishedtrue: {
     buttonVisiable: false,
     buttonText: "Finished",
     buttonClassName: "button2",
@@ -161,25 +191,9 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
   const classes = useStyles();
 
   let typeOfCard = props.typeOfCard;
-  let boxClassName = classes.addToLibrary;
-  let buttonAndBar: buttonAndBarParam = buttonPropTypes.myLibrary;
-
-  if (typeOfCard === "myLibrary") {
-    boxClassName = classes.addToLibrary;
-    buttonAndBar = buttonPropTypes.myLibrary;
-  } else if (typeOfCard === "finished" && !props.isCategoryTab) {
-    boxClassName = classes.finish;
-    buttonAndBar = buttonPropTypes.finished;
-  } else if (typeOfCard === "reading" && !props.isCategoryTab) {
-    boxClassName = classes.finish;
-    buttonAndBar = buttonPropTypes.reading;
-  } else if (props.isCategoryTab && props.book.status === "reading") {
-    boxClassName = classes.explore;
-    buttonAndBar = buttonPropTypes.exploreReading;
-  } else {
-    boxClassName = classes.explore;
-    buttonAndBar = buttonPropTypes.exploreFinished;
-  }
+  let string = `${typeOfCard}${props.isCategoryTab}`;
+  let buttonAndBar: buttonAndBarParam = buttonPropTypes[string];
+  let boxClassName = classes[string];
 
   return (
     <ThemeProvider theme={Theme}>
