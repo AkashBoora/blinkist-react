@@ -2,7 +2,6 @@ import React from 'react';
 import { ComponentStory } from '@storybook/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { MyLibraryPageComponent } from './MyLibrary';
-// import { getBooks } from '../../../Data/Data';
 
 export default {
   title: 'pages / MyLibrary',

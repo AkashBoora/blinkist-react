@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, Story } from "@storybook/react";
+import { Story } from "@storybook/react";
 import { ThemeProvider } from "@emotion/react";
 import Theme from "../../../Themes/themes";
 import { MemoryRouter } from "react-router-dom";
@@ -27,6 +27,7 @@ export const CurrentlyReadingCards = Template.bind({});
 CurrentlyReadingCards.args = {
   books: getBooks(),
   status:"reading",
+  isCategoryTab: false,
   changeBookStatus:()=> handleClick(getBooks()[0])
 };
 
@@ -34,30 +35,15 @@ export const FinishedCards = Template.bind({});
 FinishedCards.args = {
   books: getBooks(),
   status:"finished",
+  isCategoryTab: false,
   changeBookStatus:()=> handleClick(getBooks()[0])
 };
 
-export const TrendingBooks = Template.bind({});
-TrendingBooks.args = {
+export const ExplorePage = Template.bind({});
+ExplorePage.args = {
   books: getBooks(),
   isCategoryTab: true,
-  category: "trendingBlinks",
-  changeBookStatus:()=> handleClick(getBooks()[0])
-};
-
-export const JustAddedBooks = Template.bind({});
-JustAddedBooks.args = {
-  books: getBooks(),
-  isCategoryTab: true,
-  category: "justAdd",
-  changeBookStatus:()=> handleClick(getBooks()[0])
-};
-
-export const FeaturedBooks = Template.bind({});
-FeaturedBooks.args = {
-  books: getBooks(),
-  isCategoryTab: true,
-  category: "featured",
+  category: "entrepreneurship",
   changeBookStatus:()=> handleClick(getBooks()[0])
 };
 

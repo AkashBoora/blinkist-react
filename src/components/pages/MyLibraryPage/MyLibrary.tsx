@@ -1,6 +1,6 @@
 import React from "react";
 import { RootTemplate } from "../../templates/Template";
-import { MyLibraryPageBodyComponent } from "../../organisam/MyLibraryPageBody.tsx/MyLibraryPageBody";
+import { MyLibraryPageBodyComponent } from "../../organism/MyLibraryPageBody.tsx/MyLibraryPageBody";
 
 
 

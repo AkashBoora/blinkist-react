@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react'
 import { HomePageTabComponent } from './HomePageTabs';
-import {getBooks} from "./../../../data/Data"
+import {getBooks} from "../../../data/Data"
 import { BrowserRouter } from 'react-router-dom';
 
 const handleChange = () =>{}

@@ -3,7 +3,7 @@ import React from "react";
 
 import { Grid } from "@mui/material";
 import Theme from "../../Themes/themes";
-import { HeaderComponent } from "../organisam/Header/Header";
+import { HeaderComponent } from "../organism/Header/Header";
 import { FooterComponent } from "../molecules/Footer/Footer";
 
 export const useStyles = makeStyles({
@@ -31,6 +31,7 @@ export const useStyles = makeStyles({
 export type MyProps = {
   body: React.ReactNode;
 };
+
 export const RootTemplate = (props: MyProps) => {
 
   return (

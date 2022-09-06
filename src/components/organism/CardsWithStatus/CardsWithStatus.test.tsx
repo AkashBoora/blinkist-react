@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import {getBooks} from "./../../../data/Data"
+import {getBooks} from "../../../data/Data"
 import { BrowserRouter } from 'react-router-dom';
 import { CardsWithStatusComponent } from './CardsWithStatus';
 import userEvent from '@testing-library/user-event';
@@ -23,7 +23,7 @@ describe("Display CardsWithStatusComponent", () => {
     })
 
     test("Should display CardsWithStatusComponent library", () => {
-        render(<Test books={getBooks()} status="myLibrary" changeBookStatus={handleChange} isCategoryTab={false}/>)
+        render(<Test books={getBooks()} status="myLibrary" changeBookStatus={handleChange} isCategoryTab={true}/>)
         const component = screen.getByTestId("cardsWithState");
         expect(component).toBeInTheDocument();
     })

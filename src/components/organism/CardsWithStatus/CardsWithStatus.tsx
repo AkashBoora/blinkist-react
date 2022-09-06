@@ -12,6 +12,12 @@ export interface CardsWithStatusProps {
   seachText?: string;
 }
 
+const sxForGrid =
+  {
+    flexWrap: "wrap",
+    margin: "0%",
+    padding: "0%",
+}
 export const CardsWithStatusComponent = (props: CardsWithStatusProps) => {
   let filteredBooks = props.books.filter(check);
 
@@ -25,22 +31,17 @@ export const CardsWithStatusComponent = (props: CardsWithStatusProps) => {
     );
   }
 
-
   return (
     <Grid
       display="flex"
       style={props.style}
-      sx={{
-        flexWrap: "wrap",
-        margin: "0%",
-        padding: "0%",
-      }}
+      sx={sxForGrid}
       gap="30px"
       data-testid="cardsWithState"
     >
-      {filteredBooks.length > 0 && filteredBooks.map((book: Book, index: number) => {
+      {filteredBooks.length > 0 && filteredBooks.map((book: Book) => {
         return (
-          <div key={index}>
+          <div key={book.id}>
               <Grid item>
                 <BookCardComponent
                   book={book}

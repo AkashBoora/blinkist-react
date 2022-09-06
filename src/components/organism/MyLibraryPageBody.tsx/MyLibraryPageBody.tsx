@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Book } from "../../molecules/BookCard/BookCard";
-import { HomePageTabComponent } from "../../organisam/HomePageTabs/HomePageTabs";
+import { HomePageTabComponent } from "../HomePageTabs/HomePageTabs";
 import { fetchAllBooks, updateBook } from "../../../APIs";
 
 export const MyLibraryPageBodyComponent = () => {

@@ -9,12 +9,13 @@ import { ReactComponent as Time } from "./../../../assets/icons/time.svg";
 import { TabsBookDetailComponent } from "../TabsInBookDetails/TabsInBookDetailsTab";
 import { useEffect, useState } from "react";
 import { fetchBookById, updateBook } from "../../../APIs";
+import { useLocation } from "react-router-dom";
 
 
 export const BookDetailsComponenet = () => {
-  let url = window.location.href;
-  let id = Number(url.slice(34));
 
+  let id = Number(useLocation().pathname.slice(13));
+  console.log(useLocation().pathname);
 
   const [book, setBookData] = useState<Book>();
   const [dataModifiedToggle,setDataModifiedToggle] = useState(false);

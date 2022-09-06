@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { RootTemplate } from "../../templates/Template";
-import { BookDetailsComponenet } from "../../organisam/BookDetails/BookDetails";
+import { BookDetailsComponenet } from "../../organism/BookDetails/BookDetails";
 
 export interface BookDetailsPageComponentProps {}
 

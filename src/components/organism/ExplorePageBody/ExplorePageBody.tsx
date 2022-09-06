@@ -5,11 +5,11 @@ import { Book } from "../../molecules/BookCard/BookCard";
 import { SearchBarComponent } from "../../molecules/SearchBar/SearchBar";
 import { CardsWithStatusComponent } from "../CardsWithStatus/CardsWithStatus";
 import { fetchAllBooks, updateBook } from "../../../APIs";
+import { useLocation } from "react-router-dom";
 
 let category = "";
 export const ExplorePageBodyComponent = () => {
-  let url = window.location.href;
-  category = url.slice(30).replaceAll("%20", " ");
+  category = useLocation().pathname.slice(9).replaceAll("%20", " ");
 
   const [bookData, setBookData] = useState<Book[]>([]);
   const [dataModifiedToggle, setDataModifiedToggle] = useState(false);
@@ -30,7 +30,7 @@ export const ExplorePageBodyComponent = () => {
     } else {
       book.status = "reading";
     }
-    updateBook(book);
+    await updateBook(book);
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
 
