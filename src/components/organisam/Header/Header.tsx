@@ -76,10 +76,10 @@ export const HeaderComponent = () => {
   };
 
   const ExtendedNav = () => {
-    var body = document.body,
+    const body = document.body,
       html = document.documentElement;
 
-    var pageHeight = Math.max(
+    const pageHeight = Math.max(
       body.scrollHeight,
       body.offsetHeight,
       html.clientHeight,

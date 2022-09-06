@@ -38,7 +38,7 @@ export const BookDetailsComponenet = () => {
     updateBook(book);
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
-  let buttonText = "Add to library";
+  let buttonText;
 
   if(book?.status==="myLibrary"){
     buttonText = "Add to Library"

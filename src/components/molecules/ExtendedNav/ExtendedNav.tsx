@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
 });
 
-export interface categoryInterface {
+export interface CategoryInterface {
   name: string;
   icon: React.ReactNode;
 }
@@ -76,7 +76,7 @@ export const ExtendNavComponent = (props: ExtendedNavProps) => {
         </Container>
         <Container maxWidth="md">
           <Grid container spacing={5}>
-            {ExploreCategeries.map((category: categoryInterface, index:number) => {
+            {ExploreCategeries.map((category: CategoryInterface, index:number) => {
               const { name, icon } = category;
               return (
                 <Grid item xs={12} sm={4} key={index}>

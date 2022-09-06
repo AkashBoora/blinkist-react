@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
 import { Book, BookCardComponent } from "../../molecules/BookCard/BookCard";
 
@@ -13,7 +13,7 @@ export interface CardsWithStatusProps {
 }
 
 export const CardsWithStatusComponent = (props: CardsWithStatusProps) => {
-  let filteredBooks = props.books.filter(check);;
+  let filteredBooks = props.books.filter(check);
 
 
   function check(book: Book) {

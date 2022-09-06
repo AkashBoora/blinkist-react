@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Book } from "../../molecules/BookCard/BookCard";
-import { RootTemplate } from "../../templates/Template";
 import { HomePageTabComponent } from "../../organisam/HomePageTabs/HomePageTabs";
 import { fetchAllBooks, updateBook } from "../../../APIs";
 

@@ -1,4 +1,4 @@
-import { Icon, Typography } from "@mui/material";
+import { Icon } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
 
@@ -35,8 +35,7 @@ export interface IconAndTextComponentProps {
     | "subtitle3"
     | "body3"
     | "caption1"
-    | "caption2"
-    | undefined;
+    | "caption2";
   className?: string;
   onClick?: (arg: any) => void;
   style?: React.CSSProperties;

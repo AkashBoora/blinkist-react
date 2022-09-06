@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 });
 
 export interface ButtonComponentProps extends ButtonProps {
-  startIcon?: React.ReactNode | undefined;
+  startIcon?: React.ReactNode;
   onClick?: any;
 }
 

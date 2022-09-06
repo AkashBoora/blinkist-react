@@ -126,7 +126,7 @@ export interface BookCardComponentProps {
   isCategoryTab?: boolean;
 }
 
-const buttonPropTypes: Record<string, buttonAndBarParam> = {
+const ButtonPropTypes: Record<string, ButtonAndBarParam> = {
   myLibrarytrue: {
     buttonVisiable: true,
     buttonText: "Add to Library",
@@ -169,7 +169,7 @@ const buttonPropTypes: Record<string, buttonAndBarParam> = {
   },
 };
 
-interface buttonAndBarParam {
+interface ButtonAndBarParam {
   buttonVisiable: boolean;
   buttonText: string;
   buttonClassName:
@@ -192,7 +192,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
 
   let typeOfCard = props.typeOfCard;
   let string = `${typeOfCard}${props.isCategoryTab}`;
-  let buttonAndBar: buttonAndBarParam = buttonPropTypes[string];
+  let buttonAndBar: ButtonAndBarParam = ButtonPropTypes[string];
   let boxClassName = classes[string];
 
   return (
