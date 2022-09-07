@@ -1,7 +1,13 @@
 import { makeStyles } from "@material-ui/styles";
-import { Button, Grid, IconButton, ThemeProvider, Typography } from "@mui/material";
+import {
+  Button,
+  Grid,
+  IconButton,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
-import { LogoComponent } from "../../atoms/Logo/Logo";
+import Logo from "./../../../assets/icons/Blinkist.png";
 import { ExtendNavComponent } from "../../molecules/ExtendedNav/ExtendedNav";
 import { ReactComponent as Search } from "./../../../assets/icons/search.svg";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -51,6 +57,18 @@ const useStyles = makeStyles({
   },
 });
 
+const GridSxMain = {
+  height: "44",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
+const LogOutButtonSx ={ marginLeft: "420px", padding: "0px" };
+const ButtonSx = { backgroundColor: "white", padding: "0" };
+const ExtendedNavSx = {top: "150%", width: "100%", background: "#9DA3A673",
+}
+
 export const HeaderComponent = () => {
   const classes = useStyles();
 
@@ -64,7 +82,8 @@ export const HeaderComponent = () => {
       <Grid
         item
         className={logoutButton ? classes.visible : classes.hidden}
-        top="90%" left="69.8%"
+        top="90%"
+        left="69.8%"
       >
         <ButtonComponent
           children="Log Out"
@@ -89,12 +108,8 @@ export const HeaderComponent = () => {
     return (
       <Grid
         item
-        sx={{
-          height: pageHeight,
-          top: "150%",
-          width: "100%",
-          background: "#9DA3A673",
-        }}
+        height={pageHeight}
+        sx={ExtendedNavSx}
         className={clicked ? classes.visible : classes.hidden}
       >
         <ExtendNavComponent />
@@ -103,94 +118,90 @@ export const HeaderComponent = () => {
   };
   return (
     <ThemeProvider theme={Theme}>
-    <MainContainer >
-      <Grid data-testid="header" container direction="row">
-        <Grid
-          item
-          container
-          sx={{
-            height: "44",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          gap="32px"
-        >
-          <Grid item>
-            <Link to="/mylibrary">
-              <LogoComponent style={{height: '26px', width: '124.09px'}}/>
-            </Link>
-          </Grid>
-          <Grid item>
-            <IconButton style={{ padding: "0px" }}>
-              <Search />
-            </IconButton>
-          </Grid>
-          <Grid item>
-            <Button sx={{ backgroundColor: "white", padding: "0" }}>
-              <Typography
-                sx={{ color: "#03314B" }}
-                className={classes.headerLink}
-                onClick={() => {
-                  handleClicked(!clicked);
-                  setLogOutButton(false);
-                }}
-              >
-                Explore{" "}
-                {clicked ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-              </Typography>
-            </Button>
-          </Grid>
-          <Grid item>
-            <Link
-              to="/mylibrary"
-              style={{
-                textDecoration: "none",
-                color: "#03314B",
-                fontFamily: "Cera Pro",
-                fontWeight: "500",
-                fontSize: "16px",
-              }}
-            >
-              <TypographyComponent
-                fontFamily="Cera Pro"
-                variant="body2"
-              >
-                My Library
-              </TypographyComponent>
-            </Link>
-          </Grid>
-          <Grid item sx={{ marginLeft: "420px", padding: "0px" }}>
-            {" "}
-            <Box
-              style={{
-                fontFamily: "Cera Pro",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Button data-testid="avatar"
-                name=" "
-                endIcon={
-                  logoutButton ? (
+      <MainContainer>
+        <Grid data-testid="header" container direction="row">
+          <Grid item container sx={GridSxMain} gap="32px">
+            <Grid item>
+              <Link to="/mylibrary">
+                <img
+                  src={Logo}
+                  style={{ height: "26px", width: "124.09px" }}
+                  alt="logo"
+                />
+              </Link>
+            </Grid>
+            <Grid item>
+              <IconButton style={{ padding: "0px" }}>
+                <Search />
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <Button sx={ButtonSx}>
+                <Typography
+                  color = "#03314B"
+                  className={classes.headerLink}
+                  onClick={() => {
+                    handleClicked(!clicked);
+                    setLogOutButton(false);
+                  }}
+                >
+                  Explore{" "}
+                  {clicked ? (
                     <KeyboardArrowUpIcon />
                   ) : (
                     <KeyboardArrowDownIcon />
-                  )
-                }
-                onClick={() => {
-                  setLogOutButton(!logoutButton);
-                  handleClicked(false);
+                  )}
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid item>
+              <Link
+                to="/mylibrary"
+                style={{
+                  textDecoration: "none",
+                  color: "#03314B",
+                  fontFamily: "Cera Pro",
+                  fontWeight: "500",
+                  fontSize: "16px",
                 }}
-                startIcon={<AvatarComponent letter={user?.name?.charAt(0)} />}
-              />
-            </Box>
+              >
+                <TypographyComponent fontFamily="Cera Pro" variant="body2">
+                  My Library
+                </TypographyComponent>
+              </Link>
+            </Grid>
+            <Grid item sx={LogOutButtonSx}>
+              {" "}
+              <Box
+                style={{
+                  fontFamily: "Cera Pro",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Button
+                  data-testid="avatar"
+                  name=" "
+                  endIcon={
+                    logoutButton ? (
+                      <KeyboardArrowUpIcon />
+                    ) : (
+                      <KeyboardArrowDownIcon />
+                    )
+                  }
+                  onClick={() => {
+                    setLogOutButton(!logoutButton);
+                    handleClicked(false);
+                  }}
+                  startIcon={<AvatarComponent letter={user?.name?.charAt(0)} />}
+                />
+              </Box>
+            </Grid>
           </Grid>
+          <ExtendedNav></ExtendedNav>
+          <LogOutDropDown></LogOutDropDown>
         </Grid>
-        <ExtendedNav></ExtendedNav>
-        <LogOutDropDown></LogOutDropDown>
-      </Grid>
-    </MainContainer>
+      </MainContainer>
     </ThemeProvider>
   );
 };

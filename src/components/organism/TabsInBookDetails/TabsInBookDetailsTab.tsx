@@ -25,6 +25,8 @@ const useStyles = makeStyles({
 
   }
 });
+const BoxSx = { justifyContent:"left !important", typography: "subtitle1" };
+const TabListSx = { borderBottom: 2, borderColor: "#E1ECFC"}
 export const TabsBookDetailComponent = () => {
   const classes = useStyles();
   const [value, setValue] = useState("1");
@@ -33,7 +35,7 @@ export const TabsBookDetailComponent = () => {
   };
 
   return (
-    <Box data-testid="tabs" sx={{ justifyContent:"left !important", typography: "subtitle1" }}>
+    <Box data-testid="tabs" sx={BoxSx}>
       <TabContext value={value} >
         <Box
           fontFamily={"Cera Pro"}
@@ -42,7 +44,7 @@ export const TabsBookDetailComponent = () => {
           <TabList
             onChange={handleChange}
             className={classes.root}
-            sx={{ borderBottom: 2, borderColor: "#E1ECFC"}}
+            sx={TabListSx}
             TabIndicatorProps={{
               style: { color: "#03314B", background:"#03314B", padding: "0px"}
             }}

@@ -46,7 +46,7 @@ export interface IconAndTextComponentProps {
 export const IconAndTextComponent = (props: IconAndTextComponentProps) => {
   const styles = useStyles();
   return (
-    <div className={styles.main} data-testid="iconAndText">
+    <div className={styles.main} style={props.style} data-testid="iconAndText">
       <Icon>{props.iconSource}</Icon>
       <img src={props.src} alt={props.src}></img>
       <TypographyComponent

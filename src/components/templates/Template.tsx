@@ -31,40 +31,43 @@ export const useStyles = makeStyles({
 export type MyProps = {
   body: React.ReactNode;
 };
-
+const HeaderSx = {
+  display: "flex",
+  justifyContent: "center",
+  paddingTop: "1%",
+  paddingBottom: "2%",
+};
+const BodySx = {
+  display: "flex",
+  justifyContent: "center",
+  minHeight: "43.06vh",
+};
+const FooterSx = {
+  backgroundColor: "#F1F6F4",
+  display: "flex",
+  justifyContent: "center",
+  mt: "60px",
+};
 export const RootTemplate = (props: MyProps) => {
-
   return (
     <ThemeProvider theme={Theme}>
-      <Grid item container direction="column" display= "flex"
-            justifyContent= "center" sx={{ textAlign: "left" }} data-testid="rootTemplate">
-        <Grid
-          item
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: "1%",
-            paddingBottom: "2%",
-          }}
-        >
-          <HeaderComponent/>
+      <Grid
+        item
+        container
+        direction="column"
+        display="flex"
+        textAlign="left"
+        justifyContent="center"
+        data-testid="rootTemplate"
+      >
+        <Grid item sx={HeaderSx}>
+          <HeaderComponent />
         </Grid>
-        <Grid
-          item
-          sx={{ display: "flex", justifyContent: "center", minHeight: "43.06vh"}}
-        >
+        <Grid item sx={BodySx}>
           {props.body}
         </Grid>
-        <Grid
-          item
-          sx={{
-            backgroundColor: "#F1F6F4",
-            display: "flex",
-            justifyContent: "center",
-            mt: "60px",
-          }}
-        >
-          <FooterComponent/>
+        <Grid item sx={FooterSx}>
+          <FooterComponent />
         </Grid>
       </Grid>
     </ThemeProvider>
