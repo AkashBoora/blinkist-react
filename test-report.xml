@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/atoms/Button/Button.test.tsx">
+    <testCase name="Button Test Button with start icon and text" duration="209"/>
+    <testCase name="Button Test Button with end icon and text" duration="58"/>
+    <testCase name="Button Test Button with Text" duration="50"/>
+    <testCase name="Button Test Button with button1" duration="44"/>
+    <testCase name="Button Test Button with button2" duration="39"/>
+    <testCase name="Button Test Button with button3" duration="30"/>
+    <testCase name="Button Test Button with button4" duration="31"/>
+    <testCase name="Button Test Button with button5" duration="38"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.test.tsx">
+    <testCase name="Display BookCardComponent Should display BookCardComponent myLibrary typecard" duration="422"/>
+    <testCase name="Display BookCardComponent Should display BookCardComponent reading typecard" duration="55"/>
+    <testCase name="Display BookCardComponent Should display BookCardComponent finished typecard" duration="62"/>
+    <testCase name="Display BookCardComponent Should display BookCardComponent myLibrary typecard in explore page" duration="49"/>
+    <testCase name="Display BookCardComponent Should display BookCardComponent reading typecard in explore page" duration="31"/>
+    <testCase name="Display BookCardComponent Should display BookCardComponent finished typecard in explore page" duration="31"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/organisam/Header/Header.test.tsx">
+    <testCase name="Display Header Should display Footer" duration="977"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/pages/ExplorePage/ExplorePage.test.tsx">
+    <testCase name="Display ExplorePageComponent Should display ExplorePageComponent" duration="883"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/pages/CategoryResultsPage/CategoryResultsPage.test.tsx">
+    <testCase name="Display BookDetailsComponenet Should display BookDetailsComponenet" duration="855"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/App.test.tsx">
+    <testCase name="renders learn react link" duration="90"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/organisam/HomePageTabs/HomePageTabs.test.tsx">
+    <testCase name="Display Home Page Tabs Should display Home Page Tabs" duration="718"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/pages/BookDetailsPage/BookDeatlis.test.tsx">
+    <testCase name="Display BookDetailsComponenet Should display BookDetailsComponenet" duration="869"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/organisam/CardsWithStatus/CardsWithStatus.test.tsx">
+    <testCase name="Display CardsWithStatusComponent Should display CardsWithStatusComponent" duration="1100"/>
+    <testCase name="Display CardsWithStatusComponent Should display CardsWithStatusComponent library" duration="62"/>
+    <testCase name="Display CardsWithStatusComponent Should display CardsWithStatusComponent finished" duration="192"/>
+    <testCase name="Display CardsWithStatusComponent Should display CardsWithStatusComponent category politics" duration="95"/>
+    <testCase name="Display CardsWithStatusComponent Should display CardsWithStatusComponent category politics search" duration="10"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/organisam/BookDetails/BookDetails.test.tsx">
+    <testCase name="Display BookDetailsComponent Should display BookDetailsComponent 0" duration="1266"/>
+    <testCase name="Display BookDetailsComponent Should display BookDetailsComponent 1" duration="121"/>
+    <testCase name="Display BookDetailsComponent Should display BookDetailsComponent 2" duration="108"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/pages/MyLibraryPage/MyLibraryPage.test.tsx">
+    <testCase name="Display MyLibraryPageComponent Should display MyLibraryPageComponent" duration="1075"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/Banner/Banner.test.tsx">
+    <testCase name="Display Banner Should display banner" duration="74"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/FooterNavList/FooterNavList.test.tsx">
+    <testCase name="Display FooterNavList Should display FooterNavList editorial" duration="68"/>
+    <testCase name="Display FooterNavList Should display FooterNavList general" duration="21"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/atoms/Avatar/Avatar.test.tsx">
+    <testCase name="Unit Test - Avatar" duration="57"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/TabsInBookDetails/TabsInBookDetails.test.tsx">
+    <testCase name="Display Tabs Should display Tabs" duration="199"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/atoms/Typography/Typography.test.tsx">
+    <testCase name="Display Typography Should display medium logo" duration="59"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/LoginPage.test.tsx">
+    <testCase name="renders learn react link" duration="325"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/templates/Template.test.tsx">
+    <testCase name="Display RootTemplate Should display RootTemplate" duration="84"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/SearchBar/SearchBar.test.tsx">
+    <testCase name="Display SearchBar Should display SearchBar" duration="136"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/organisam/Footer/Footer.test.tsx">
+    <testCase name="Display Footer Should display Footer" duration="133"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/ExtendedNav/ExtendedNav.test.tsx">
+    <testCase name="Display ExtendedNav Should display ExtendedNav" duration="225"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/IcontAndText/IconAndText.test.tsx">
+    <testCase name="Display IconAndTet Should display IconAndTet" duration="47"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/atoms/Icon/Icon.test.tsx">
+    <testCase name="Display Icon Should display Icon" duration="17"/>
+  </file>
+  <file path="/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/atoms/Logo/Logo.test.tsx">
+    <testCase name="Display Logo Should display medium logo" duration="23"/>
+    <testCase name="Display Logo Should display small logo" duration="3"/>
+  </file>
+</testExecutions>

@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import {  styled } from "@mui/styles";
 import { FooterNavData } from "../../../data/FooterNavData";
 import Theme from "../../../Themes/themes";
@@ -11,21 +12,21 @@ const MainContainer = styled("div")({
   backgroundColor: "#F1F6F4",
   position: "relative",
   bottom: "0px",
+  display: "flex", justifyContent: "center", 
 });
 
 const WrapContaner = styled("div")({
-  display: "flex",
-  flexDirection: "row",
-  position: "relative",
-  left: 220,
+  display: "flex", justifyContent: "center", 
+  justifyItems: "center",
+
+  flexDirection: "column",
 });
 
 const LeftContainer = styled("div")({
   position: "relative",
   top: 38,
-  left: 244,
   width: 378,
-  height: "128px !important",
+  height: "300px !important",
   display: "flex",
   flexDirection: "column",
   gap: 32,
@@ -34,31 +35,30 @@ const LeftContainer = styled("div")({
 const RightContainer = styled("div")({
   position: "relative",
   top: 38,
-  left: 310,
   display: "flex",
+  gap: 32,
 });
 
 const BottomContainer = styled("div")({
-  position: "absolute",
-  left: 244,
-  top: 310,
 });
 
 export const FooterComponent = () => {
   return (
-    <MainContainer>
+    <MainContainer data-testid="footer">
       <WrapContaner>
+        <Grid display="flex">
             <LeftContainer>
-            <LogoComponent classing="small" />
+            <LogoComponent style={{height: '24px', width: '99.1px'}} />
             <TypographyComponent variant="subtitle1" color={Theme.palette.secondary.main} style={{width: "350px"}}>
                 Big ideas in small packages Start learning now
             </TypographyComponent>
             </LeftContainer>
             <RightContainer>
-                <FooterNavListComponent type="editorial" title={FooterNavData.Editorial.title} data={FooterNavData.Editorial.data}/>
-                <FooterNavListComponent type="general" title={FooterNavData.UsefulLinks.title} data={FooterNavData.UsefulLinks.data}/>
-                <FooterNavListComponent type="general" title={FooterNavData.Company.title} data={FooterNavData.Company.data}/>
+                <FooterNavListComponent title={FooterNavData.Editorial.title} data={FooterNavData.Editorial.data}/>
+                <FooterNavListComponent title={FooterNavData.UsefulLinks.title} data={FooterNavData.UsefulLinks.data}/>
+                <FooterNavListComponent title={FooterNavData.Company.title} data={FooterNavData.Company.data}/>
             </RightContainer>
+            </Grid>
         <BottomContainer>
             <TypographyComponent variant="caption1" color={Theme.palette.text_color.light}>Ⓒ Blinkist 2021 Sitemap  |  Imprint  |  Terms of Service  |  Privacy Policies</TypographyComponent>
         </BottomContainer>

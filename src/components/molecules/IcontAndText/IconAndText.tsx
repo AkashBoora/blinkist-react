@@ -1,5 +1,6 @@
-import { Icon, Typography } from "@mui/material";
+import { Icon } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { TypographyComponent } from "../../atoms/Typography/Typography";
 
 const useStyles = makeStyles({
   main: {
@@ -8,7 +9,7 @@ const useStyles = makeStyles({
     cursor: "pointer",
     fontFamily: "Cera Pro",
     alignItems: "center",
-    gap: "8px"
+    gap: "8px",
   },
 });
 
@@ -34,29 +35,28 @@ export interface IconAndTextComponentProps {
     | "subtitle3"
     | "body3"
     | "caption1"
-    | "caption2"
-    | undefined;
+    | "caption2";
   className?: string;
-  onClick?: () => void;
+  onClick?: (arg: any) => void;
   style?: React.CSSProperties;
   color?: any;
+  src?: string;
 }
 
 export const IconAndTextComponent = (props: IconAndTextComponentProps) => {
   const styles = useStyles();
   return (
-    <div className={styles.main}>
-      <Icon>
-        {props.iconSource}
-      </Icon>
-      <Typography
+    <div className={styles.main} data-testid="iconAndText">
+      <Icon>{props.iconSource}</Icon>
+      <img src={props.src} alt={props.src}></img>
+      <TypographyComponent
         variant={props.variant}
         color={props.color}
         className={`${props.className}`}
         onClick={props.onClick}
       >
         {props.title}
-      </Typography>
+      </TypographyComponent>
     </div>
   );
 };

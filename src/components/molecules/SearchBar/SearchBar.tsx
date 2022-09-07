@@ -34,21 +34,23 @@ const useStyles = makeStyles({
 
 export interface SearchBarComponentProps {
   className?: string;
+  handleChange: (arg : any) => void;
 }
 
 export const SearchBarComponent = (props: SearchBarComponentProps) => {
   const classes = useStyles();
   return (
-    <ThemeProvider theme={Theme}>
-      <Box className={classes.boxElement}>
+    <ThemeProvider theme={Theme} >
+      <Box data-testid="searchBar" className={classes.boxElement}>
         <div>
           <IconComponent src={Search} />
         </div>
-        <input
+        <input data-testid="input"
           type="text"
           className={`${classes.inputBar} ${props.className}`}
           placeholder="Search by title or author"
           color={Theme.palette.text_color.placeholder}
+          onChange={event=>props.handleChange(event)}
         />
       </Box>
     </ThemeProvider>

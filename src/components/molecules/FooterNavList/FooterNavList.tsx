@@ -3,11 +3,8 @@ import Theme from "../../../Themes/themes";
 import { makeStyles, styled } from "@mui/styles";
 
 const useStyles = makeStyles({
-    editorial:{
-        // width: "214px"
-    },
     general:{
-        // width: "142px"
+        width: "160px"
     }
 })
 const Items = styled("div")({
@@ -17,19 +14,13 @@ const Items = styled("div")({
 export interface FooterNavListComponentProps {
   title: string;
   data: Array<string>;
-  type: "editorial" | "general";
 }
 export const FooterNavListComponent = (props: FooterNavListComponentProps) => {
-  let { data, title, type } = props;
+  let { data, title } = props;
   let classes =  useStyles();
-  let className;
-  if(type === "general"){
-    className= classes.general
-  }else{
-    className = classes.editorial
-  }
+  let className= classes.general;
   return (
-    <div className={className}>
+    <div data-testid="footerNavList" className={className} >
       <TypographyComponent
         variant="body1"
         color={Theme.palette.text_color.main}

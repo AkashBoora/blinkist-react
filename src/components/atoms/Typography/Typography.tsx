@@ -8,7 +8,7 @@ export interface TypographyComponentProps extends TypographyProps {
 
 export const TypographyComponent = (props: TypographyComponentProps) => {
   return (
-    <Typography
+    <Typography data-testid="typography"
       variant={props.variant}
       color={props.color}
       fontFamily={"Cera Pro"}

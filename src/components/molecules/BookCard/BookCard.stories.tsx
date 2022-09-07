@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, Story } from "@storybook/react";
+import { Story } from "@storybook/react";
 import { ThemeProvider } from "@emotion/react";
 import Theme from "../../../Themes/themes";
 import { BookCardComponent, BookCardComponentProps } from "./BookCard";
@@ -25,34 +25,34 @@ const Template: Story< BookCardComponentProps> = (args) => (
 export const ReadCard = Template.bind({});
 ReadCard.args = {
   book:getBooks()[0],
-   bookObject:getBooks(),
     typeOfCard:"reading",
-    onFinishedClick: ()=>handleClick(getBooks()[0])
+    isCategoryTab:false,
+    changeBookStatus: ()=>handleClick(getBooks()[0])
 };
 
 export const FinishedCard = Template.bind({});
 FinishedCard.args = {
   book: getBooks()[0],
-  bookObject: getBooks(),
+  isCategoryTab:false,
   typeOfCard: "finished",
-  onFinishedClick: () => handleClick(getBooks()[0]),
+  changeBookStatus: () => handleClick(getBooks()[0]),
 };
 
 export const AddToLibraryCard = Template.bind({});
 AddToLibraryCard.args = {
   book: getBooks()[0],
-  bookObject: getBooks(),
+  isCategoryTab:true,
   typeOfCard: "myLibrary",
-  onFinishedClick: () => handleClick(getBooks()[0]),
+  changeBookStatus: () => handleClick(getBooks()[0]),
 };
 
 
 export const ExploreCard = Template.bind({});
 ExploreCard.args = {
   book: getBooks()[0],
-  bookObject: getBooks(),
-  typeOfCard: "explore",
-  onFinishedClick: () => handleClick(getBooks()[0]),
+  typeOfCard: "reading",
+  isCategoryTab:true,
+  changeBookStatus: () => handleClick(getBooks()[0]),
 };
 
 

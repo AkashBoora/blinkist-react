@@ -1,0 +1,746 @@
+
+<src_components_molecules_BookCard_BookCard_tsx_21_35_A_3_then
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx" (:"s2_1*º}
+s2_1
+<synthetic> (I
+G
+
+__unknown_file (
+	%sc-P_4_0"__id**
+
+%env"
+
+%scope-P_4êç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (
+	%object_0Object"Objectü
+ú
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (
+
+	%object_0Object"
+flex"__id*
+1êç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx  (
+	%object_1Object"Object¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (
+
+	%object_1Object"
+color"__id*	
+#03314B®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (#
+
+	%object_1Object"
+
+fontWeight"__id*
+bold¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (!
+
+	%object_1Object"
+
+fontSize"__id*
+18px®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (#
+
+	%object_1Object"
+
+lineHeight"__id*
+23px™
+ß
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (&
+
+	%object_1Object"
+paddingBottom"__id*
+8px¨
+©
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx (#
+
+	%object_1Object"
+
+fontFamily"__id*
+
+Cera Proêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx"	 '(
+	%object_2Object"Object•
+¢
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx# #( 
+
+	%object_2Object"	
+display"__id*
+flexµ
+≤
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx$ $(#'
+
+	%object_2Object"
+justifyContent"__id*
+space-between™
+ß
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx% %(#
+
+	%object_2Object"
+
+whiteSpace"__id*
+
+nowrap®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx& &(#
+
+	%object_2Object"
+
+paddingTop"__id*
+16pxêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx( ((
+	%object_3Object"Objectêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx) 4(
+	%object_4Object"Object•
+¢
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx* *( 
+
+	%object_4Object"	
+display"__id*
+flex¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx+ +(
+
+	%object_4Object"
+color"__id*	
+#0365F2≠
+™
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx, ,(&
+
+	%object_4Object"
+textAlignment"__id*
+
+centreÆ
+´
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx- -('
+
+	%object_4Object"
+justifyContent"__id*
+
+center´
+®
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx. .(&
+
+	%object_4Object"
+paddingBottom"__id*
+16px¨
+©
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx/ /(#
+
+	%object_4Object"
+
+fontFamily"__id*
+
+Cera Pro©
+¶
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx0 0("
+
+	%object_4Object"
+	fontStyle"__id*
+
+normalß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx1 1(#
+
+	%object_4Object"
+
+fontWeight"__id*
+500¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx2 2(!
+
+	%object_4Object"
+
+fontSize"__id*
+16px®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx3 3(#
+
+	%object_4Object"
+
+lineHeight"__id*
+20pxêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx5 @(
+	%object_5Object"Object•
+¢
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx6 6( 
+
+	%object_5Object"	
+display"__id*
+flex¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx7 7(
+
+	%object_5Object"
+color"__id*	
+#0365F2≠
+™
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx8 8(&
+
+	%object_5Object"
+textAlignment"__id*
+
+centreÆ
+´
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx9 9('
+
+	%object_5Object"
+justifyContent"__id*
+
+center´
+®
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx: :(&
+
+	%object_5Object"
+paddingBottom"__id*
+16px¨
+©
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx; ;(#
+
+	%object_5Object"
+
+fontFamily"__id*
+
+Cera Pro©
+¶
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx< <("
+
+	%object_5Object"
+	fontStyle"__id*
+
+normalß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx= =(#
+
+	%object_5Object"
+
+fontWeight"__id*
+500¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx> >(!
+
+	%object_5Object"
+
+fontSize"__id*
+16px®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx? ?(#
+
+	%object_5Object"
+
+lineHeight"__id*
+20pxêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxA
+ L(
+	%object_6Object"Object•
+¢
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxB B( 
+
+	%object_6Object"	
+display"__id*
+flex¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxC C(
+
+	%object_6Object"
+color"__id*	
+#0365F2≠
+™
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxD D(&
+
+	%object_6Object"
+textAlignment"__id*
+
+centreÆ
+´
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxE E('
+
+	%object_6Object"
+justifyContent"__id*
+
+center´
+®
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxF F(&
+
+	%object_6Object"
+paddingBottom"__id*
+16px¨
+©
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxG G(#
+
+	%object_6Object"
+
+fontFamily"__id*
+
+Cera Pro©
+¶
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxH H("
+
+	%object_6Object"
+	fontStyle"__id*
+
+normalß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxI I(#
+
+	%object_6Object"
+
+fontWeight"__id*
+500¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxJ J(!
+
+	%object_6Object"
+
+fontSize"__id*
+16px®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxK K(#
+
+	%object_6Object"
+
+lineHeight"__id*
+20pxêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxM O(
+	%object_7Object"Objectß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxN N("
+
+	%object_7Object"
+	marginTop"__id*
+36pxêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxP R(
+	%object_8Object"Objectß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxQ Q("
+
+	%object_8Object"
+	marginTop"__id*
+36pxêç
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxS S(
+	%object_9Object"Objectëé
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxT V(
+
+%object_10Object"Object®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxU U(#
+
+
+%object_10Object"
+	marginTop"__id*
+36pxI
+G
+
+__unknown_file (
+	%sc-P_4_1"__id**
+
+%env"
+
+%scope-P_4G
+E
+
+__unknown_file (	
+%expr_0"__id**
+
+	%sc-P_4_1"
+ThemeG
+E
+
+__unknown_file (	
+%expr_1"__id**
+	
+%expr_0"	
+spacing∂"≥
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxX X(
+
+%methRes_0*
+	
+%expr_0"	
+spacing2
+	
+%expr_02
+
+%env22ëé
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxW Y(
+
+%object_11Object"Object®
+•
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxX X(
+
+
+%object_11Object"
+gap"__id*
+
+
+%methRes_0I
+G
+
+__unknown_file (
+	%sc-P_4_2"__id**
+
+%env"
+
+%scope-P_4W
+U
+
+__unknown_file (	
+%expr_2"__id*(*&
+
+	%sc-P_4_2"
+linearProgressClasses™
+ß
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx_ _(.
+%fieldAccess_0"__id**
+	
+%expr_2"
+colorPrimary¶
+£
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx_ _(.
+	%concat_0"__concat*
+&.*
+
+%fieldAccess_0I
+G
+
+__unknown_file (
+	%sc-P_4_3"__id**
+
+%env"
+
+%scope-P_4G
+E
+
+__unknown_file (	
+%expr_3"__id**
+
+	%sc-P_4_3"
+ThemeG
+E
+
+__unknown_file (	
+%expr_4"__id**
+	
+%expr_3"	
+paletteD
+B
+
+__unknown_file (	
+%expr_5"__id**
+	
+%expr_4"
+greyõ
+ò
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx` `(.
+%var_0"__mapGet*
+	
+%expr_5*2»ëé
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx_1 a(
+
+%object_12Object"Object∞
+≠
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx` `(.)
+
+
+%object_12Object"
+backgroundColor"__id*
+
+
+%var_0I
+G
+
+__unknown_file (
+	%sc-P_4_4"__id**
+
+%env"
+
+%scope-P_4W
+U
+
+__unknown_file (	
+%expr_6"__id*(*&
+
+	%sc-P_4_4"
+linearProgressClasses°
+û
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxb b(&
+%fieldAccess_1"__id**
+	
+%expr_6"
+barß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxb b(&
+	%concat_1"__concat*
+& .*
+
+%fieldAccess_1ëé
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxb) e(
+
+%object_13Object"Objectß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxc c(&
+
+
+%object_13Object"
+borderRadius"__id*2±
+Æ
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxd d( )
+
+
+%object_13Object"
+backgroundColor"__id*	
+#E1ECFCëé
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxZ f(
+
+%object_14Object"ObjectØ
+¨
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx\ \(
+
+
+%object_14Object"
+width"__id*
+100% !important∞
+≠
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx] ]( 
+
+
+%object_14Object"
+height"__id*
+12px !importantß
+§
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx^ ^(&
+
+
+%object_14Object"
+borderRadius"__id*2«
+ƒ
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx_ a(	
+%void_0"__mapSet*
+
+
+%object_14Object*
+
+	%concat_0*
+
+
+%object_12Object«
+ƒ
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxb e(	
+%void_1"__mapSet*
+
+
+%object_14Object*
+
+	%concat_1*
+
+
+%object_13Objectëé
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx: g(
+
+%object_15Object"Object¥
+±
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx ("
+
+
+%object_15Object"
+
+flexGrow"__id*
+
+	%object_0Object∑
+¥
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx  (%
+
+
+%object_15Object"
+titleOfBook"__id*
+
+	%object_1Object±
+Æ
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx" '(
+
+
+%object_15Object"
+Reads"__id*
+
+	%object_2Objectπ
+∂
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx( (('
+
+
+%object_15Object"
+myLibrarytrue"__id*
+
+	%object_3Objectπ
+∂
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx) 4('
+
+
+%object_15Object"
+finishedfalse"__id*
+
+	%object_4Object∏
+µ
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx5 @(&
+
+
+%object_15Object"
+readingfalse"__id*
+
+	%object_5Object≤
+Ø
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxA L( 
+
+
+%object_15Object"
+finish"__id*
+
+	%object_6Object∑
+¥
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxM O(%
+
+
+%object_15Object"
+readingtrue"__id*
+
+	%object_7Object∏
+µ
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxP R(&
+
+
+%object_15Object"
+finishedtrue"__id*
+
+	%object_8Object∏
+µ
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxS S(&
+
+
+%object_15Object"
+addToLibrary"__id*
+
+	%object_9Object¥
+±
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxT V(!
+
+
+%object_15Object"	
+explore"__id*
+
+
+%object_10Object¥
+±
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxW Y(!
+
+
+%object_15Object"	
+spacing"__id*
+
+
+%object_11Objectª
+∏
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsxZ f((
+
+
+%object_15Object"
+linearProgress"__id*
+
+
+%object_14Object"à
+n
+d/home/akasb/ZemosoTraining/GitTraining/blinkist-react/src/components/molecules/BookCard/BookCard.tsx: g(
+
+
+%object_15Object:
+%env:
+theme
+ReactThemeB 

@@ -13,7 +13,7 @@ export const IconComponent= (props:IconComponentProps) =>{
 
   return (
    
-    <img src={props.src} alt='BlinkList' className={props.className} style={props.style}/>
+    <img  data-testid="icon" src={props.src} alt='BlinkList' className={props.className} style={props.style}/>
     
   )
 }

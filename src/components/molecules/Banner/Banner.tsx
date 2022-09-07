@@ -1,4 +1,3 @@
-import { ThemeProvider } from "@mui/material";
 import { styled } from "@mui/system";
 import { BannerData } from "../../../data/BannerData";
 import Theme from "../../../Themes/themes";
@@ -8,16 +7,18 @@ import image from "../../../assets/icons/bannerimg.png";
 const MainBoxContainer = styled("div")({
   width: "912px",
   height: "264px",
+  justifyContent: "center",
+  alignItems: "center",
   backgroundColor: Theme.palette.background_color.main,
 });
 
 const RightContainer = styled("div")({
-  position: "absolute",
+  position: "relative",
   height: "230px",
   gap: "15px",
   width: "249px",
   left: "618px",
-  top: "17px",
+  top: "-175px"
 });
 
 const LeftContainer = styled("div")({
@@ -27,6 +28,7 @@ const LeftContainer = styled("div")({
   gap: "15px",
   top: "45px",
   bottom: "45px",
+  width: "663px",
   left: "45px",
 });
 
@@ -50,8 +52,7 @@ export interface BannerComponentProps {
 
 export const BannerComponent = (props: BannerComponentProps) => {
   return (
-    <ThemeProvider theme={Theme}>
-      <MainBoxContainer className={props.className}>
+      <MainBoxContainer data-testid="banner" className={props.className}>
         <LeftContainer>
           <LeftTopContainer>
             <TypographyComponent variant="heading">
@@ -72,6 +73,5 @@ export const BannerComponent = (props: BannerComponentProps) => {
           />
         </RightContainer>
       </MainBoxContainer>
-    </ThemeProvider>
   );
 };
