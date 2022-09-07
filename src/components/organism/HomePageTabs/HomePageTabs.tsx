@@ -28,6 +28,9 @@ const useStyles = makeStyles({
   
     }
   });
+
+const TabListSx = {justifyContent:"start",alignItems:"start",alignText:"left"}
+const TabSx = {textAlign:"left",typography: "subtitle3", textTransform: "none"}
 export interface HomePageTabComponentProps {
     books: Array<Book>
     changeBookStatus: (arg: Book) => void
@@ -45,13 +48,13 @@ export const HomePageTabComponent = (props: HomePageTabComponentProps) => {
             <TabContext value={value}>
                 <Box fontFamily='Cera Pro' >
                     <TabList
-                        sx={{justifyContent:"start",alignItems:"start",alignText:"left"}}
+                        sx={TabListSx}
                         onChange={handleChange}
                         TabIndicatorProps={{
                             style:{fontWeight:400}
                         }}>
-                        <Tab className={classes.tabs} label="Currently Reading" value="1" sx={{textAlign:"left",typography: "subtitle3", textTransform: "none"}} />
-                        <Tab className={classes.tabs} label="Finished" value="2" sx={{typography: "subtitle3", textTransform: "none"}}/>
+                        <Tab className={classes.tabs} label="Currently Reading" value="1" sx={TabSx} />
+                        <Tab className={classes.tabs} label="Finished" value="2" sx={TabSx}/>
                     </TabList>
                 </Box>
                 <TabPanel value="1" style={{padding:"30px 0px"}}>

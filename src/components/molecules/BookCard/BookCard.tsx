@@ -33,7 +33,6 @@ const useStyles: any = makeStyles((theme: ReactTheme) => ({
 
   Reads: {
     display: "flex",
-    justifyContent: "space-between",
     whiteSpace: "nowrap",
     paddingTop: "16px",
   },
@@ -187,6 +186,13 @@ interface ButtonAndBarParam {
   linearBarValue: number;
 }
 
+const styleSx = { paddingBottom: "14px" }
+
+const CardSx = {
+  width: "284px",
+  height: "466px",
+  borderRadius: "8px",
+}
 export const BookCardComponent = (props: BookCardComponentProps) => {
   const classes = useStyles();
 
@@ -199,11 +205,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
     <ThemeProvider theme={Theme}>
       <Box data-testid="bookCard">
         <Card
-          sx={{
-            width: "284px",
-            height: "466px",
-            borderRadius: "8px",
-          }}
+          sx={CardSx}
         >
           <Link
             to={`/bookdetails/${props.book.id}`}
@@ -217,7 +219,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
             />
             <CardContent
               className={classes.spacing}
-              style={{ paddingBottom: "14px" }}
+              style={styleSx}
             >
               <Box className={classes.titleOfBook}>
                 <TypographyComponent
@@ -234,6 +236,7 @@ export const BookCardComponent = (props: BookCardComponentProps) => {
               </Box>
               <Box className={classes.Reads}>
                 <IconAndTextComponent
+                  style={{paddingRight:"60px"}}
                   iconSource={<Time />}
                   variant="caption1"
                   title={`${props.book.readTime} minutes`}

@@ -30,7 +30,7 @@ export const ExplorePageBodyComponent = () => {
     } else {
       book.status = "reading";
     }
-    await updateBook(book);
+    await updateBook(book).catch(error=>console.error(error));;
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
 
@@ -61,7 +61,7 @@ export const ExplorePageBodyComponent = () => {
 
         <Box
           data-testid="bookData"
-          sx={{ paddingTop: "1%" }}
+          paddingTop="1%"
           style={{
             display: "flex",
             flexDirection: "column",

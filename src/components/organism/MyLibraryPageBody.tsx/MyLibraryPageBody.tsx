@@ -24,7 +24,7 @@ export const MyLibraryPageBodyComponent = () => {
     } else {
       book.status = "reading";
     }
-    updateBook(book);
+    updateBook(book).catch(error=>console.error(error));
     setDataModifiedToggle((prevState: boolean) => !prevState);
   }
   return (

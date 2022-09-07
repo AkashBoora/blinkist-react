@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import {  styled } from "@mui/styles";
 import { FooterNavData } from "../../../data/FooterNavData";
 import Theme from "../../../Themes/themes";
-import { LogoComponent } from "../../atoms/Logo/Logo";
+import Logo from "./../../../assets/icons/Blinkist.png";
 import { TypographyComponent } from "../../atoms/Typography/Typography";
 import { FooterNavListComponent } from "../FooterNavList/FooterNavList";
 
@@ -48,7 +48,7 @@ export const FooterComponent = () => {
       <WrapContaner>
         <Grid display="flex">
             <LeftContainer>
-            <LogoComponent style={{height: '24px', width: '99.1px'}} />
+            <img src={Logo} style={{height: '24px', width: '99.1px'}} alt="logo"/>
             <TypographyComponent variant="subtitle1" color={Theme.palette.secondary.main} style={{width: "350px"}}>
                 Big ideas in small packages Start learning now
             </TypographyComponent>
